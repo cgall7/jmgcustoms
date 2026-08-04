@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PlaceholderPanel } from "@/components/PlaceholderPanel";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Process | JMG Customs",
@@ -42,10 +42,15 @@ export default function ProcessPage() {
       </p>
 
       <div className="mt-12 grid gap-10 sm:grid-cols-2 sm:items-center">
-        <PlaceholderPanel
-          label="Family photo"
-          className="aspect-[4/3] rounded-lg"
-        />
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <Image
+            src="/images/family.jpg"
+            alt="The Gallagher family, owners of JMG Customs"
+            fill
+            className="object-cover"
+            sizes="(min-width: 640px) 50vw, 100vw"
+          />
+        </div>
         <div>
           <h2 className="font-display text-2xl font-semibold text-foreground">
             Why we build this way

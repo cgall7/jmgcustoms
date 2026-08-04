@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PlaceholderPanel } from "@/components/PlaceholderPanel";
 
 export default function Home() {
@@ -72,10 +73,15 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-10 sm:grid-cols-2 sm:items-center">
-          <PlaceholderPanel
-            label="Family / shop photo"
-            className="aspect-[4/3] rounded-lg order-2 sm:order-1"
-          />
+          <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-lg sm:order-1">
+            <Image
+              src="/images/family.jpg"
+              alt="The Gallagher family, owners of JMG Customs"
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+          </div>
           <div className="order-1 sm:order-2">
             <h2 className="font-display text-2xl font-semibold text-foreground">
               A family shop, built on craft
