@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf6ef;
+  --foreground: #2a2420;
+  --wood: #5c4530;
+  --wood-dark: #3a2c1e;
+  --ember: #c67a3a;
+  --ember-dark: #a45f26;
+  --line: #e3d9c8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-wood: var(--wood);
+  --color-wood-dark: var(--wood-dark);
+  --color-ember: var(--ember);
+  --color-ember-dark: var(--ember-dark);
+  --color-line: var(--line);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.bg-grain {
+  background-image:
+    repeating-linear-gradient(
+      100deg,
+      rgba(58, 44, 30, 0.05) 0px,
+      rgba(58, 44, 30, 0.05) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+}
+
+.text-balance {
+  text-wrap: balance;
+}
