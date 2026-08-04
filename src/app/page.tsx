@@ -5,31 +5,43 @@ export default function Home() {
   return (
     <>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
-        <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
-            Custom woodworking, built by hand
-          </p>
-          <h1 className="text-balance mt-4 font-display text-4xl font-semibold leading-tight text-foreground sm:text-6xl">
-            Solid wood. No shortcuts. Built to outlast us.
-          </h1>
-          <p className="text-balance mt-6 max-w-xl text-lg leading-relaxed text-foreground/70">
-            JMG Customs designs and builds custom kitchens, tables, and
-            furniture — every piece shaped, joined, and finished by hand in
-            the shop, not pulled off a shelf.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/gallery"
-              className="rounded-full bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
-            >
-              View the work
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-wood/30 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-ember-dark hover:text-ember-dark"
-            >
-              Start a project
-            </Link>
+        <div className="grid gap-12 sm:grid-cols-2 sm:items-center">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
+              Custom woodworking, built by hand
+            </p>
+            <h1 className="text-balance mt-4 font-display text-4xl font-semibold leading-tight text-foreground sm:text-6xl">
+              Solid wood. No shortcuts. Built to outlast us.
+            </h1>
+            <p className="text-balance mt-6 max-w-xl text-lg leading-relaxed text-foreground/70">
+              JMG Customs designs and builds custom kitchens, tables, and
+              furniture — every piece shaped, joined, and finished by hand in
+              the shop, not pulled off a shelf.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/gallery"
+                className="rounded-full bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
+              >
+                View the work
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-full border border-wood/30 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-ember-dark hover:text-ember-dark"
+              >
+                Start a project
+              </Link>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+            <Image
+              src="/gallery/tables/table-05.jpg"
+              alt="Live-edge slab conference table with hand-forged steel base"
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+              priority
+            />
           </div>
         </div>
       </section>
