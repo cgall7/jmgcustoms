@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PlaceholderPanel } from "@/components/PlaceholderPanel";
 
 export default function Home() {
   return (
@@ -42,10 +41,16 @@ export default function Home() {
           </h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             <Link href="/gallery#kitchen" className="group block">
-              <PlaceholderPanel
-                label="Kitchen project photos"
-                className="aspect-[4/3] rounded-lg"
-              />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/gallery/kitchen/kitchen-15.jpg"
+                  alt="Full custom kitchen build with sage cabinetry"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  priority
+                />
+              </div>
               <h3 className="mt-4 font-display text-xl font-semibold text-foreground group-hover:text-ember-dark">
                 Full Kitchen Build
               </h3>
@@ -55,10 +60,16 @@ export default function Home() {
               </p>
             </Link>
             <Link href="/gallery#tables" className="group block">
-              <PlaceholderPanel
-                label="Table project photos"
-                className="aspect-[4/3] rounded-lg"
-              />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/gallery/tables/table-13.jpg"
+                  alt="Round walnut pedestal table with inlaid map top"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  priority
+                />
+              </div>
               <h3 className="mt-4 font-display text-xl font-semibold text-foreground group-hover:text-ember-dark">
                 Dining &amp; Occasional Tables
               </h3>
