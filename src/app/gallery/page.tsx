@@ -6,13 +6,11 @@ export const metadata: Metadata = {
   description: "Custom kitchen and table projects from JMG Customs.",
 };
 
-const KITCHEN_SHOTS = Array.from(
-  { length: 29 },
-  (_, i) => `/gallery/kitchen/kitchen-${String(i + 1).padStart(2, "0")}.jpg`
+const KITCHEN_SHOTS = ["02", "05", "08", "11", "15", "17", "20", "28"].map(
+  (n) => `/gallery/kitchen/kitchen-${n}.jpg`
 );
-const TABLE_SHOTS = Array.from(
-  { length: 29 },
-  (_, i) => `/gallery/tables/table-${String(i + 1).padStart(2, "0")}.jpg`
+const TABLE_SHOTS = ["05", "09", "13", "17", "27"].map(
+  (n) => `/gallery/tables/table-${n}.jpg`
 );
 
 function PhotoGrid({ photos, alt }: { photos: string[]; alt: string }) {
