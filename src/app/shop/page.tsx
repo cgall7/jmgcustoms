@@ -27,7 +27,7 @@ function CapMockup() {
         src="/images/merch/cap-mockup.jpg"
         alt="JMG Customs mark on a trucker hat"
         fill
-        className="object-cover object-top"
+        className="object-cover"
         sizes="(min-width: 640px) 50vw, 100vw"
       />
     </div>
