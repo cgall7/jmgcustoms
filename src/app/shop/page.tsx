@@ -9,28 +9,13 @@ export const metadata: Metadata = {
 function TeeMockup() {
   return (
     <div className="relative aspect-square overflow-hidden rounded-lg bg-wood/5">
-      <svg
-        viewBox="0 0 200 200"
-        className="absolute inset-0 h-full w-full text-[#efe6d6]"
-        aria-hidden="true"
-      >
-        <path
-          d="M70 30 L40 45 L20 75 L38 92 L52 82 L52 175 L148 175 L148 82 L162 92 L180 75 L160 45 L130 30 C130 44 116 54 100 54 C84 54 70 44 70 30 Z"
-          fill="currentColor"
-          stroke="var(--color-wood)"
-          strokeOpacity="0.25"
-          strokeWidth="2"
-        />
-      </svg>
-      <div className="absolute left-1/2 top-[46%] h-16 w-16 -translate-x-1/2 -translate-y-1/2 sm:h-20 sm:w-20">
-        <Image
-          src="/images/logo-mark.png"
-          alt="JMG Customs mark screen-printed on a t-shirt"
-          fill
-          className="object-contain"
-          sizes="80px"
-        />
-      </div>
+      <Image
+        src="/images/merch/tee-mockup.jpg"
+        alt="JMG Customs mark screen-printed on a white t-shirt"
+        fill
+        className="object-cover"
+        sizes="(min-width: 640px) 50vw, 100vw"
+      />
     </div>
   );
 }
@@ -38,35 +23,13 @@ function TeeMockup() {
 function CapMockup() {
   return (
     <div className="relative aspect-square overflow-hidden rounded-lg bg-wood/5">
-      <svg
-        viewBox="0 0 200 200"
-        className="absolute inset-0 h-full w-full text-[#efe6d6]"
-        aria-hidden="true"
-      >
-        <path
-          d="M100 40 C60 40 30 68 26 105 C60 96 140 96 174 105 C170 68 140 40 100 40 Z"
-          fill="currentColor"
-          stroke="var(--color-wood)"
-          strokeOpacity="0.25"
-          strokeWidth="2"
-        />
-        <path
-          d="M26 105 C55 98 145 98 174 105 C176 112 172 118 163 119 C140 111 60 111 37 119 C28 118 24 112 26 105 Z"
-          fill="currentColor"
-          stroke="var(--color-wood)"
-          strokeOpacity="0.25"
-          strokeWidth="2"
-        />
-      </svg>
-      <div className="absolute left-1/2 top-[46%] h-14 w-14 -translate-x-1/2 -translate-y-1/2 sm:h-16 sm:w-16">
-        <Image
-          src="/images/logo-mark.png"
-          alt="JMG Customs mark embroidered on a cap"
-          fill
-          className="object-contain"
-          sizes="64px"
-        />
-      </div>
+      <Image
+        src="/images/merch/cap-mockup.jpg"
+        alt="JMG Customs mark on a trucker hat"
+        fill
+        className="object-cover object-top"
+        sizes="(min-width: 640px) 50vw, 100vw"
+      />
     </div>
   );
 }
@@ -78,8 +41,8 @@ const MERCH = [
     Mockup: TeeMockup,
   },
   {
-    name: "JMG Customs Cap",
-    blurb: "Structured six-panel, mark embroidered on the front.",
+    name: "JMG Customs Trucker Hat",
+    blurb: "Classic mesh-back trucker, mark on the front panel.",
     Mockup: CapMockup,
   },
 ];
