@@ -1,47 +1,34 @@
+import Image from "next/image";
+
 type LogoProps = {
   className?: string;
   mark?: boolean;
 };
 
 /**
- * v1 mark — riffs on the flint-and-spark reference Colin shared: a chisel
- * striking a wedge of wood, spark lines standing in for "forged by hand."
- * Treat as a placeholder pass for Deezine to refine, not final brand art.
+ * v2 mark — St. Joseph the Worker, cropped tight on the halo and hands so it
+ * stays legible at header size. Full illustration (with workbench) lives at
+ * /images/logo-illustration.png for larger, standalone placements.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <path
-        d="M14 40 L30 24 L36 30 L20 46 Z"
-        fill="currentColor"
-        className="text-wood"
+    <span className={`relative block ${className}`}>
+      <Image
+        src="/images/logo-mark.png"
+        alt=""
+        fill
+        className="object-contain"
+        sizes="64px"
+        priority
       />
-      <path
-        d="M30 24 L46 10"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        className="text-wood-dark"
-      />
-      <g className="text-ember" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-        <path d="M38 20 L46 14" />
-        <path d="M40 26 L50 24" />
-        <path d="M36 14 L40 6" />
-      </g>
-    </svg>
+    </span>
   );
 }
 
 export function Logo({ className = "", mark = true }: LogoProps) {
   return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      {mark && <LogoMark className="h-8 w-8" />}
+    <span className={`inline-flex items-center gap-3 ${className}`}>
+      {mark && <LogoMark className="h-12 w-12" />}
       <span className="font-display leading-none">
         <span className="block text-lg font-semibold tracking-wide text-foreground">
           JMG CUSTOMS
