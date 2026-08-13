@@ -71,11 +71,11 @@ export default function Home() {
                 start to finish.
               </p>
             </Link>
-            <Link href="/gallery#tables" className="group block">
+            <Link href="/tables" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
-                  src="/gallery/tables/table-13.jpg"
-                  alt="Round walnut pedestal table with inlaid map top"
+                  src="/gallery/tables/table-33.jpg"
+                  alt="Close-up of a live-edge walnut conference table with bowtie joinery"
                   fill
                   className="object-cover transition-transform group-hover:scale-105"
                   sizes="(min-width: 640px) 50vw, 100vw"
@@ -95,43 +95,6 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="font-display text-2xl font-semibold text-foreground">
-          Inside the shop
-        </h2>
-        <p className="mt-3 max-w-xl text-foreground/70">
-          Every piece starts as rough lumber on this floor before it&apos;s
-          anything else — hand-selected, cut, and joined right here, not on
-          an assembly line.
-        </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-            <Image
-              src="/gallery/tables/table-11.jpg"
-              alt="Walnut table pedestal glued up on the shop floor"
-              fill
-              className="object-cover"
-              sizes="(min-width: 640px) 50vw, 100vw"
-            />
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-            <Image
-              src="/gallery/tables/table-20.jpg"
-              alt="Live-edge tabletop mid-build in the JMG Customs workshop"
-              fill
-              className="object-cover"
-              sizes="(min-width: 640px) 50vw, 100vw"
-            />
-          </div>
-        </div>
-        <Link
-          href="/process"
-          className="mt-6 inline-block text-sm font-semibold text-ember-dark hover:underline"
-        >
-          See our full process →
-        </Link>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-10 sm:grid-cols-2 sm:items-center">
           <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-lg sm:order-1">
             <Image
