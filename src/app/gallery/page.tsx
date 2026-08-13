@@ -9,11 +9,26 @@ export const metadata: Metadata = {
 const KITCHEN_SHOTS = ["02", "05", "08", "11", "15", "17", "20", "28"].map(
   (n) => `/gallery/kitchen/kitchen-${n}.jpg`
 );
-const TABLE_SHOTS = ["05", "09", "13", "17", "27"].map(
+const TABLE_END_RESULT_SHOTS = ["05", "09", "13", "17", "27", "29", "30"].map(
   (n) => `/gallery/tables/table-${n}.jpg`
 );
+const TABLE_PROCESS_SHOTS = [
+  "/gallery/tables/table-11.jpg",
+  "/gallery/tables/table-20.jpg",
+  ...["01", "02", "03", "04", "05", "06", "07", "08"].map(
+    (n) => `/gallery/tables/process/process-${n}.jpg`
+  ),
+];
 
-function PhotoGrid({ photos, alt }: { photos: string[]; alt: string }) {
+function PhotoGrid({
+  photos,
+  alt,
+  priority = false,
+}: {
+  photos: string[];
+  alt: string;
+  priority?: boolean;
+}) {
   return (
     <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
       {photos.map((src, i) => (
@@ -27,7 +42,7 @@ function PhotoGrid({ photos, alt }: { photos: string[]; alt: string }) {
             fill
             className="object-cover"
             sizes="(min-width: 640px) 33vw, 50vw"
-            priority={i < 3}
+            priority={priority && i < 3}
           />
         </div>
       ))}
@@ -49,14 +64,30 @@ export default function GalleryPage() {
         <h2 className="font-display text-2xl font-semibold text-foreground">
           Full Kitchen Build
         </h2>
-        <PhotoGrid photos={KITCHEN_SHOTS} alt="Kitchen build" />
+        <PhotoGrid photos={KITCHEN_SHOTS} alt="Kitchen build" priority />
       </section>
 
       <section id="tables" className="mt-16 scroll-mt-24">
         <h2 className="font-display text-2xl font-semibold text-foreground">
           Dining &amp; Occasional Tables
         </h2>
-        <PhotoGrid photos={TABLE_SHOTS} alt="Table build" />
+        <p className="mt-2 max-w-xl text-sm text-foreground/60">
+          Finished pieces first, then a look at how each one gets there.
+        </p>
+
+        <h3 className="mt-10 font-display text-lg font-semibold text-foreground">
+          End Results
+        </h3>
+        <PhotoGrid
+          photos={TABLE_END_RESULT_SHOTS}
+          alt="Finished table"
+          priority
+        />
+
+        <h3 className="mt-12 font-display text-lg font-semibold text-foreground">
+          In The Shop
+        </h3>
+        <PhotoGrid photos={TABLE_PROCESS_SHOTS} alt="Table build in progress" />
       </section>
     </div>
   );
