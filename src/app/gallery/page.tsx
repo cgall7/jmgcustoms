@@ -9,13 +9,14 @@ export const metadata: Metadata = {
 const KITCHEN_SHOTS = ["02", "05", "08", "11", "15", "17", "20", "28"].map(
   (n) => `/gallery/kitchen/kitchen-${n}.jpg`
 );
-const TABLE_END_RESULT_SHOTS = ["05", "09", "13", "17", "27", "29", "30"].map(
-  (n) => `/gallery/tables/table-${n}.jpg`
-);
+const TABLE_END_RESULT_SHOTS = [
+  "05", "09", "13", "17", "27", "29", "30", "31", "32", "33", "34", "35",
+  "36", "37", "38", "39", "40", "41", "42", "43", "44",
+].map((n) => `/gallery/tables/table-${n}.jpg`);
 const TABLE_PROCESS_SHOTS = [
   "/gallery/tables/table-11.jpg",
   "/gallery/tables/table-20.jpg",
-  ...["01", "02", "03", "04", "05", "06", "07", "08"].map(
+  ...["01", "02", "03", "04", "05", "06", "07", "08", "09"].map(
     (n) => `/gallery/tables/process/process-${n}.jpg`
   ),
 ];
