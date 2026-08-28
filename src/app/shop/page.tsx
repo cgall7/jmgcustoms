@@ -52,21 +52,24 @@ export default function ShopPage() {
     <div className="mx-auto max-w-6xl px-6 py-16">
       <div className="grid gap-10 sm:grid-cols-2 sm:items-center">
         <div>
-          <h1 className="font-display text-4xl font-semibold text-foreground">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
             Shop
+          </p>
+          <h1 className="mt-3 font-display text-4xl font-semibold text-foreground">
+            Things from the shop.
           </h1>
           <p className="mt-3 max-w-md text-foreground/70">
-            We&apos;re not selling online just yet — but merch is on the way.
-            Here&apos;s a first look at the mark on a couple of shop
-            staples.
+            We&apos;re working on a small collection of JMG Customs goods you
+            can purchase without commissioning a full project. Here&apos;s a
+            first look — check back soon.
           </p>
         </div>
         <div className="relative order-first aspect-[4/3] overflow-hidden rounded-lg sm:order-last">
           <Image
-            src="/images/logo-illustration.png"
-            alt="JMG Customs mark — St. Joseph the Worker"
+            src="/images/logo-illustration.jpg"
+            alt="JMG Customs mark"
             fill
-            className="object-contain bg-wood/5"
+            className="object-cover"
             sizes="(min-width: 640px) 50vw, 100vw"
             priority
           />
@@ -94,7 +97,7 @@ export default function ShopPage() {
         Want first dibs when merch drops — or a piece of furniture in the
         meantime?{" "}
         <a
-          href="/contact"
+          href="/start-a-project"
           className="font-semibold text-ember-dark hover:underline"
         >
           Get in touch
