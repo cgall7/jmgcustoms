@@ -10,7 +10,8 @@ export const metadata: Metadata = {
 };
 
 const SHOP_FLOOR_SHOTS = [
-  "05", "09", "11", "13", "17", "20", "27",
+  "05", "09", "13", "17", "27", "29", "30", "31", "32", "33", "34", "35",
+  "36", "37", "38", "39", "40", "41", "42", "43", "44",
 ].map((n) => `/gallery/tables/table-${n}.jpg`);
 
 export default function WorkPage() {
