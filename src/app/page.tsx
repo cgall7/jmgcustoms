@@ -58,7 +58,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <Link href="/work#kitchen" className="group block">
+            <Link href="/work/log-house-kitchen" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
                   src="/gallery/kitchen/kitchen-15.jpg"
