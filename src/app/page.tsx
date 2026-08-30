@@ -62,7 +62,7 @@ export default function Home() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
                   src="/gallery/tables/table-33.jpg"
-                  alt="Close-up of a live-edge walnut conference table with bowtie joinery"
+                  alt="Close up of a live edge walnut conference table with bowtie joinery"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(min-width: 640px) 50vw, 100vw"

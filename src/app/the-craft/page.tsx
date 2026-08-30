@@ -29,7 +29,7 @@ const STEPS = [
   },
   {
     title: "06 — Delivery",
-    body: "For built-ins and larger projects, installation is completed on-site so the finished work fits the actual space, not just the original drawing.",
+    body: "For custom built pieces and larger projects, installation is completed on site so the finished work fits the actual space, not just the original drawing.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function TheCraftPage() {
       <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
         <Image
           src="/gallery/tables/table-20.jpg"
-          alt="Live-edge tabletop mid-build in the JMG Customs workshop"
+          alt="Live edge tabletop mid build in the JMG Customs workshop"
           fill
           className="object-cover"
           sizes="100vw"
@@ -95,7 +95,7 @@ export default function TheCraftPage() {
               Joinery
             </h3>
             <p className="mt-2 leading-relaxed text-foreground/70">
-              Mortise-and-tenon. Dovetails. Dowels. Carefully fitted joints.
+              Mortise and tenon. Dovetails. Dowels. Carefully fitted joints.
               The specific construction depends on the piece, but the
               principle stays the same: build it so it can live a long life.
             </p>
@@ -105,7 +105,7 @@ export default function TheCraftPage() {
               The Finish
             </h3>
             <p className="mt-2 leading-relaxed text-foreground/70">
-              We use hand-applied finishes chosen to protect the furniture
+              We use hand applied finishes chosen to protect the furniture
               while allowing the natural character of the wood to remain
               visible. You should be able to see the grain and feel the
               material.

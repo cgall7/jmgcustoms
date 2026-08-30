@@ -25,19 +25,19 @@ const MERCH: {
   colorways: ColorwayKey[];
 }[] = [
   {
-    name: "Dad Hat · 6-Panel",
+    name: "Dad Hat · 6 Panel",
     blurb:
       "Unstructured washed cotton with a brass slide buckle. Monogram embroidered on the front panel, wordmark on the back closure.",
     image: "/images/merch/dad-hat.png",
-    alt: "Walnut-brown six-panel dad hat with the JMG monogram embroidered on the front",
+    alt: "Walnut brown six panel dad hat with the JMG monogram embroidered on the front",
     colorways: ["walnut", "charcoal", "natural"],
   },
   {
     name: "Trucker · Mesh Back",
     blurb:
-      "Structured cream front panel with charcoal mesh and brim. Monogram in walnut thread, kept inside the front-panel seams.",
+      "Structured cream front panel with charcoal mesh and brim. Monogram in walnut thread, kept inside the front panel seams.",
     image: "/images/merch/trucker-hat.png",
-    alt: "Mesh-back trucker hat with a cream front panel and the JMG monogram",
+    alt: "Mesh back trucker hat with a cream front panel and the JMG monogram",
     colorways: ["natural", "charcoal"],
   },
   {
@@ -61,7 +61,7 @@ const MERCH: {
     blurb:
       "Walnut 400 gsm fleece with bronze drawcords. Monogram embroidered on the left chest; full stack screened large across the back.",
     image: "/images/merch/hoodie.png",
-    alt: "Walnut-brown pullover hoodie with bronze drawcords and the JMG monogram on the chest",
+    alt: "Walnut brown pullover hoodie with bronze drawcords and the JMG monogram on the chest",
     colorways: ["walnut", "charcoal", "natural"],
   },
   {
@@ -73,11 +73,11 @@ const MERCH: {
     colorways: ["charcoal", "natural"],
   },
   {
-    name: "Cross-Back Work Apron",
+    name: "Cross Back Work Apron",
     blurb:
       "14 oz waxed duck canvas with a split tool pocket and copper rivets. Monogram embroidered on the bib above the pocket line.",
     image: "/images/merch/work-apron.png",
-    alt: "Walnut-brown cross-back work apron with a split tool pocket and the JMG monogram on the bib",
+    alt: "Walnut brown cross back work apron with a split tool pocket and the JMG monogram on the bib",
     colorways: ["walnut", "charcoal"],
   },
 ];

@@ -25,7 +25,7 @@ const BELIEFS = [
   },
   {
     title: "The future matters.",
-    body: "We aren't building pieces for a five-year lifespan. We're building with the hope that someone will still be using them long after we're done.",
+    body: "We aren't building pieces for a five year lifespan. We're building with the hope that someone will still be using them long after we're done.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function OurStoryPage() {
             become part of our family&apos;s story.
           </p>
           <p className="mt-4 leading-relaxed text-foreground/70">
-            We&apos;re drawn to old-fashioned craftsmanship for a reason.
+            We&apos;re drawn to old fashioned craftsmanship for a reason.
             Furniture used to be made with the expectation that it would be
             around for a long time. We like that idea. We like knowing that a
             piece we build today might still be in someone&apos;s home decades

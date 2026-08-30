@@ -52,10 +52,10 @@ export const PROJECTS: Project[] = [
     wood: "Maple",
     type: "Custom Table",
     summary:
-      "A live-edge conference table with bowtie joinery, built for a team that gathers around it every day.",
+      "A live edge conference table with bowtie joinery, built for a team that gathers around it every day.",
     story: [
       "Ascension Press is a Catholic publishing company who prioritizes a team culture in their work space. They wanted a table where everyone in the office could gather, share lunch, work on projects, and get to know the people they work with every day.",
-      "We designed this live-edge table that showcases the bowtie joinery.",
+      "We designed this live edge table that showcases the bowtie joinery.",
     ],
     photos: ["01", "02", "03", "04", "05", "06", "07"].map(
       (n) => `/gallery/ascension-press-conference-table/ascension-${n}.jpg`
@@ -145,7 +145,7 @@ export const PROJECTS: Project[] = [
     wood: "Painted",
     type: "Full Room Design",
     summary:
-      "A full mudroom build-out — lockers, benches, and painted wall details, designed and built from the ground up.",
+      "A full mudroom build out — lockers, benches, and painted wall details, designed and built from the ground up.",
     story: [
       "Full room design. We designed, built, and painted the lockers, benches, and details on the walls.",
     ],

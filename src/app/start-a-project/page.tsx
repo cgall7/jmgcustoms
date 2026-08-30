@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: "Do you deliver?",
-    a: "For larger furniture, kitchens, and built-ins, we can coordinate delivery and installation as appropriate.",
+    a: "For larger furniture, kitchens, and custom built pieces, we can coordinate delivery and installation as appropriate.",
   },
   {
     q: "Do you only build tables?",
