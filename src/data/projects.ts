@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
     type: "Full Room Renovation",
     summary: "A hardworking laundry room, thoughtfully designed.",
     story: ["A hardworking laundry room, thoughtfully designed."],
-    photos: [],
+    photos: ["01"].map((n) => `/gallery/laundry-room/laundry-room-${n}.jpg`),
   },
   {
     slug: "county-line-table",
@@ -48,7 +48,8 @@ export const PROJECTS: Project[] = [
     story: [
       "The client had a map of Chester County and wanted a unique way to display it, so we inlaid it into a custom bar table — a piece made to be enjoyed by everyone who comes to the farm to visit and spend time with the horses.",
     ],
-    photos: [],
+    photos: ["01"].map((n) => `/gallery/county-line-table/county-line-${n}.jpg`),
+    heroAlt: "Round walnut bar table with a Chester County map inlaid in the top",
   },
   {
     slug: "dietl-family-kitchen-table",

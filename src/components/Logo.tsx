@@ -6,18 +6,18 @@ type LogoProps = {
 };
 
 /**
- * v3 mark — JMG monogram under a brass ring, cropped tight so it stays
- * legible at header size. Full lockup (with wordmark) lives at
- * /images/logo-illustration.jpg for larger, standalone placements.
+ * v3 mark — JMG monogram under a brass ring. The ring and letters run to
+ * the edges of the source photo, so a circular mask clips them; contain
+ * the whole emblem instead of cropping it.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <span className={`relative block overflow-hidden rounded-full ${className}`}>
+    <span className={`relative block overflow-hidden rounded-lg ${className}`}>
       <Image
         src="/images/logo-mark.jpg"
         alt=""
         fill
-        className="object-cover"
+        className="object-contain"
         sizes="64px"
         priority
       />
