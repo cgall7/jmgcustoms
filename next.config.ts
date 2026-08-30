@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/work/massive-gathering-table",
+        destination: "/work/dietl-family-kitchen-table",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -32,17 +32,18 @@ export const PROJECTS: Project[] = [
   {
     slug: "dietl-family-kitchen-table",
     title: "The Dietl Family Kitchen Table",
-    wood: "Maple",
+    wood: "White Oak",
     type: "Custom Table",
-    dimensions: "7 x 4 FT",
     summary:
-      "A table big enough for everyday meals and the holidays, built to be lived around for years to come.",
+      "Fluted legs and breadboard ends on a table big enough for everyday meals and the holidays, built to be lived around for years to come.",
     story: [
       "The Dietl family was looking to update their kitchen table and wanted something they could use every day without worrying about the wear and tear that comes with family life.",
       "They wanted the table to be a highlight of their kitchen, but more importantly, a place where their family could gather — especially when their grandchildren came over for dinner.",
-      "The goal was to build something beautiful enough to stand out, but durable enough to be lived around for years to come. They were drawn to the natural knots in the wood and the dark, rich color.",
+      "The goal was to build something beautiful enough to stand out, but durable enough to be lived around for years to come. They were drawn to the natural knots in the wood and its warm, light tone, so we paired the tabletop with fluted legs and breadboard ends to give it a look that feels both familiar and unexpected.",
     ],
-    photos: ["02", "03"].map((n) => `/gallery/dietl-family-kitchen-table/dietl-${n}.jpg`),
+    photos: ["02", "03", "04", "05", "06", "07", "08"].map(
+      (n) => `/gallery/dietl-family-kitchen-table/dietl-${n}.jpg`
+    ),
     heroAlt: "The Dietl family kitchen table with black chairs in their open kitchen",
   },
   {
@@ -58,22 +59,6 @@ export const PROJECTS: Project[] = [
     ],
     photos: ["01", "02", "03", "04", "05", "06", "07"].map(
       (n) => `/gallery/ascension-press-conference-table/ascension-${n}.jpg`
-    ),
-  },
-  {
-    slug: "massive-gathering-table",
-    title: "Massive Gathering Table",
-    wood: "White Oak",
-    type: "Custom Table",
-    summary:
-      "Fluted legs and breadboard ends on a table built to seat 14–16 for a family's Lake Norman gathering house.",
-    story: [
-      "After purchasing a home on Lake Norman, NC, this family came to us with a big space and an even bigger vision. They wanted a table that could comfortably seat 14–16 people and become the gathering place for their family, as well as the many guests who would stay in their Airbnb.",
-      "The table needed to be beautiful enough to make a statement, but durable enough to handle years of dinners, conversations, and large family gatherings. We wanted it to feel special without looking like something you would find in just any dining room.",
-      "That led us to the fluted legs. We paired their more traditional shape with a classic tabletop and breadboard ends, creating a piece that feels both familiar and unexpected — a table their guests would notice, appreciate, and remember.",
-    ],
-    photos: ["01", "02", "03", "04", "05", "06", "07"].map(
-      (n) => `/gallery/massive-gathering-table/gathering-${n}.jpg`
     ),
   },
   {
