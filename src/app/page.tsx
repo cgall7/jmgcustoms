@@ -58,20 +58,6 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <Link href="/work/log-house-kitchen" className="group block">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/gallery/kitchen/kitchen-15.jpg"
-                  alt="Full custom kitchen build with sage cabinetry"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <p className="mt-4 font-display text-lg font-semibold text-foreground group-hover:text-ember-dark">
-                Full Kitchen Build
-              </p>
-            </Link>
             <Link href="/work#tables" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
@@ -84,6 +70,20 @@ export default function Home() {
               </div>
               <p className="mt-4 font-display text-lg font-semibold text-foreground group-hover:text-ember-dark">
                 Dining &amp; Occasional Tables
+              </p>
+            </Link>
+            <Link href="/work/log-house-kitchen" className="group block">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/gallery/kitchen/kitchen-15.jpg"
+                  alt="Full custom kitchen build with sage cabinetry"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <p className="mt-4 font-display text-lg font-semibold text-foreground group-hover:text-ember-dark">
+                Full Kitchen Build
               </p>
             </Link>
           </div>
