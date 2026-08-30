@@ -13,31 +13,9 @@ export type Project = {
   heroAlt?: string;
 };
 
+// Array order is the /work display order: tables lead, kitchen and room
+// projects follow.
 export const PROJECTS: Project[] = [
-  {
-    slug: "log-house-kitchen",
-    title: "Log House Kitchen",
-    wood: "Custom Cabinetry",
-    type: "Full Kitchen Renovation",
-    summary:
-      "Designed and built for a family of 14, with handcrafted cabinetry and a space made for gathering and everyday life.",
-    story: [
-      "Designed and built for a family of 14, with handcrafted cabinetry and a space made for gathering and everyday life.",
-    ],
-    photos: [
-      "02", "05", "08", "11", "15", "17", "20", "28",
-    ].map((n) => `/gallery/kitchen/kitchen-${n}.jpg`),
-    heroAlt: "Custom kitchen with handcrafted cabinetry",
-  },
-  {
-    slug: "laundry-room",
-    title: "The Laundry Room that Works",
-    wood: "Custom Cabinetry",
-    type: "Full Room Renovation",
-    summary: "A hardworking laundry room, thoughtfully designed.",
-    story: ["A hardworking laundry room, thoughtfully designed."],
-    photos: ["01"].map((n) => `/gallery/laundry-room/laundry-room-${n}.jpg`),
-  },
   {
     slug: "county-line-table",
     title: "The County Line Table",
@@ -64,7 +42,8 @@ export const PROJECTS: Project[] = [
       "They wanted the table to be a highlight of their kitchen, but more importantly, a place where their family could gather — especially when their grandchildren came over for dinner.",
       "The goal was to build something beautiful enough to stand out, but durable enough to be lived around for years to come. They were drawn to the natural knots in the wood and the dark, rich color.",
     ],
-    photos: ["01"].map((n) => `/gallery/dietl-family-kitchen-table/dietl-${n}.jpg`),
+    photos: ["02", "03"].map((n) => `/gallery/dietl-family-kitchen-table/dietl-${n}.jpg`),
+    heroAlt: "The Dietl family kitchen table with black chairs in their open kitchen",
   },
   {
     slug: "ascension-press-conference-table",
@@ -80,6 +59,57 @@ export const PROJECTS: Project[] = [
     photos: ["01", "02", "03", "04", "05", "06", "07"].map(
       (n) => `/gallery/ascension-press-conference-table/ascension-${n}.jpg`
     ),
+  },
+  {
+    slug: "massive-gathering-table",
+    title: "Massive Gathering Table",
+    wood: "White Oak",
+    type: "Custom Table",
+    summary:
+      "Fluted legs and breadboard ends on a table built to seat 14–16 for a family's Lake Norman gathering house.",
+    story: [
+      "After purchasing a home on Lake Norman, NC, this family came to us with a big space and an even bigger vision. They wanted a table that could comfortably seat 14–16 people and become the gathering place for their family, as well as the many guests who would stay in their Airbnb.",
+      "The table needed to be beautiful enough to make a statement, but durable enough to handle years of dinners, conversations, and large family gatherings. We wanted it to feel special without looking like something you would find in just any dining room.",
+      "That led us to the fluted legs. We paired their more traditional shape with a classic tabletop and breadboard ends, creating a piece that feels both familiar and unexpected — a table their guests would notice, appreciate, and remember.",
+    ],
+    photos: ["01", "02", "03", "04", "05", "06", "07"].map(
+      (n) => `/gallery/massive-gathering-table/gathering-${n}.jpg`
+    ),
+  },
+  {
+    slug: "english-elm-dining-table",
+    title: "English Elm Dining Table",
+    wood: "English Elm",
+    type: "Kitchen Table",
+    summary: "A kitchen table built to showcase the character of English elm.",
+    story: [],
+    photos: ["01", "02", "03", "04", "05", "06", "07", "08"].map(
+      (n) => `/gallery/english-elm-dining-table/elm-${n}.jpg`
+    ),
+  },
+  {
+    slug: "log-house-kitchen",
+    title: "Log House Kitchen",
+    wood: "Custom Cabinetry",
+    type: "Full Kitchen Renovation",
+    summary:
+      "Designed and built for a family of 14, with handcrafted cabinetry and a space made for gathering and everyday life.",
+    story: [
+      "Designed and built for a family of 14, with handcrafted cabinetry and a space made for gathering and everyday life.",
+    ],
+    photos: [
+      "02", "05", "08", "11", "15", "17", "20", "28",
+    ].map((n) => `/gallery/kitchen/kitchen-${n}.jpg`),
+    heroAlt: "Custom kitchen with handcrafted cabinetry",
+  },
+  {
+    slug: "laundry-room",
+    title: "The Laundry Room that Works",
+    wood: "Custom Cabinetry",
+    type: "Full Room Renovation",
+    summary: "A hardworking laundry room, thoughtfully designed.",
+    story: ["A hardworking laundry room, thoughtfully designed."],
+    photos: ["01"].map((n) => `/gallery/laundry-room/laundry-room-${n}.jpg`),
   },
   {
     slug: "family-room-entertainment-center",
@@ -125,22 +155,6 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    slug: "massive-gathering-table",
-    title: "Massive Gathering Table",
-    wood: "White Oak",
-    type: "Custom Table",
-    summary:
-      "Fluted legs and breadboard ends on a table built to seat 14–16 for a family's Lake Norman gathering house.",
-    story: [
-      "After purchasing a home on Lake Norman, NC, this family came to us with a big space and an even bigger vision. They wanted a table that could comfortably seat 14–16 people and become the gathering place for their family, as well as the many guests who would stay in their Airbnb.",
-      "The table needed to be beautiful enough to make a statement, but durable enough to handle years of dinners, conversations, and large family gatherings. We wanted it to feel special without looking like something you would find in just any dining room.",
-      "That led us to the fluted legs. We paired their more traditional shape with a classic tabletop and breadboard ends, creating a piece that feels both familiar and unexpected — a table their guests would notice, appreciate, and remember.",
-    ],
-    photos: ["01", "02", "03", "04", "05", "06", "07"].map(
-      (n) => `/gallery/massive-gathering-table/gathering-${n}.jpg`
-    ),
-  },
-  {
     slug: "ultimate-drop-zone",
     title: "Ultimate Drop Zone",
     wood: "Painted",
@@ -162,17 +176,6 @@ export const PROJECTS: Project[] = [
     summary: "Clean, simple lines designed to point to Heaven.",
     story: ["Design with the intention that the clean and simple lines point to Heaven."],
     photos: ["01", "02", "03"].map((n) => `/gallery/altar-for-chapel/altar-${n}.jpg`),
-  },
-  {
-    slug: "english-elm-dining-table",
-    title: "English Elm Dining Table",
-    wood: "English Elm",
-    type: "Kitchen Table",
-    summary: "A kitchen table built to showcase the character of English elm.",
-    story: [],
-    photos: ["01", "02", "03", "04", "05", "06", "07", "08"].map(
-      (n) => `/gallery/english-elm-dining-table/elm-${n}.jpg`
-    ),
   },
 ];
 
