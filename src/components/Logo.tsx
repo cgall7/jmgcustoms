@@ -6,18 +6,18 @@ type LogoProps = {
 };
 
 /**
- * v2 mark — St. Joseph the Worker, cropped tight on the halo and hands so it
- * stays legible at header size. Full illustration (with workbench) lives at
- * /images/logo-illustration.png for larger, standalone placements.
+ * v3 mark — JMG monogram under a brass ring, cropped tight so it stays
+ * legible at header size. Full lockup (with wordmark) lives at
+ * /images/logo-illustration.jpg for larger, standalone placements.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <span className={`relative block ${className}`}>
+    <span className={`relative block overflow-hidden rounded-full ${className}`}>
       <Image
-        src="/images/logo-mark.png"
+        src="/images/logo-mark.jpg"
         alt=""
         fill
-        className="object-contain"
+        className="object-cover"
         sizes="64px"
         priority
       />

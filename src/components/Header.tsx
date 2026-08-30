@@ -5,11 +5,10 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 
 const NAV = [
-  { href: "/gallery", label: "Gallery" },
-  { href: "/tables", label: "Tables" },
-  { href: "/process", label: "Process" },
+  { href: "/work", label: "Work" },
+  { href: "/our-story", label: "Our Story" },
+  { href: "/the-craft", label: "The Craft" },
   { href: "/shop", label: "Shop" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -21,6 +20,7 @@ export function Header() {
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
+
         <nav className="hidden items-center gap-8 sm:flex">
           {NAV.map((item) => (
             <Link
@@ -31,49 +31,49 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/start-a-project"
+            className="rounded-full bg-wood-dark px-5 py-2 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
+          >
+            Start a Project
+          </Link>
         </nav>
+
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-foreground/80 transition-colors hover:text-ember-dark sm:hidden"
+          aria-label="Toggle menu"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 sm:hidden"
         >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.75}
-            strokeLinecap="round"
-            className="h-6 w-6"
-          >
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
+          <span
+            className={`h-px w-6 bg-foreground transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+          />
+          <span
+            className={`h-px w-6 bg-foreground transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+          />
         </button>
       </div>
+
       {open && (
-        <nav
-          id="mobile-nav"
-          className="border-t border-line px-6 py-4 sm:hidden"
-        >
-          <ul className="flex flex-col gap-4">
-            {NAV.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block text-sm font-medium tracking-wide text-foreground/80 transition-colors hover:text-ember-dark"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav className="flex flex-col gap-1 border-t border-line px-6 py-4 sm:hidden">
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="py-2 text-sm font-medium tracking-wide text-foreground/80"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            href="/start-a-project"
+            onClick={() => setOpen(false)}
+            className="mt-2 rounded-full bg-wood-dark px-5 py-2.5 text-center text-sm font-semibold text-background"
+          >
+            Start a Project
+          </Link>
         </nav>
       )}
     </header>
