@@ -21,13 +21,20 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
           {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-background">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="hover:text-background"
+            >
               {item.label}
             </Link>
           ))}
         </nav>
         <div className="flex flex-col gap-1 text-sm text-background/70 sm:text-right">
-          <a href="mailto:hello@jmgcustoms.com" className="hover:text-background">
+          <a
+            href="mailto:hello@jmgcustoms.com"
+            className="hover:text-background"
+          >
             hello@jmgcustoms.com
           </a>
           <p>&copy; {new Date().getFullYear()} JMG Customs.</p>

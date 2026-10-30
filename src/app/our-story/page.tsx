@@ -40,7 +40,7 @@ export default function OurStoryPage() {
       </h1>
 
       <div className="mt-12 grid gap-10 sm:grid-cols-2 sm:items-center">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+        <div className="relative aspect-[4/3] overflow-hidden ">
           <Image
             src="/images/family.jpg"
             alt="The Gallagher family, owners of JMG Customs"
@@ -53,19 +53,10 @@ export default function OurStoryPage() {
         <div>
           <p className="leading-relaxed text-foreground/70">
             JMG Customs is a family woodworking business built around a fairly
-            simple idea: make things well, make them honestly, make them
-            worth keeping.
+            simple idea: make things well, make them honestly, make them worth
+            keeping.
           </p>
-          {/*
-            TODO(Colin): swap this paragraph for the real story of how JMG
-            started — the brief flags this as a placeholder for your actual
-            family history rather than something we should write for you.
-          */}
-          <p className="mt-4 leading-relaxed text-foreground/70">
-            We started JMG because we wanted to build the kind of furniture we
-            wanted in our own home — solid, thoughtful, beautiful, and made to
-            become part of our family&apos;s story.
-          </p>
+
           <p className="mt-4 leading-relaxed text-foreground/70">
             We&apos;re drawn to old fashioned craftsmanship for a reason.
             Furniture used to be made with the expectation that it would be
@@ -87,12 +78,12 @@ export default function OurStoryPage() {
           Why JMG?
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-foreground/70">
-          We&apos;re a small shop, which means we&apos;re personally involved
-          in the work. You don&apos;t hand your project off to a salesperson
-          and wonder who is actually building it. You talk to us. You make
-          decisions with us. You see the materials. You see the progress. And
-          when the piece is finished, you know the people who made it.
-          That&apos;s important to us.
+          We&apos;re a small shop, which means we&apos;re personally involved in
+          the work. You don&apos;t hand your project off to a salesperson and
+          wonder who is actually building it. You talk to us. You make decisions
+          with us. You see the materials. You see the progress. And when the
+          piece is finished, you know the people who made it. That&apos;s
+          important to us.
         </p>
       </section>
 

@@ -10,8 +10,26 @@ export const metadata: Metadata = {
 };
 
 const SHOP_FLOOR_SHOTS = [
-  "05", "09", "13", "17", "27", "29", "30", "31", "32", "33", "34", "35",
-  "36", "37", "38", "39", "40", "41", "42", "43",
+  "05",
+  "09",
+  "13",
+  "17",
+  "27",
+  "29",
+  "30",
+  "31",
+  "32",
+  "33",
+  "34",
+  "35",
+  "36",
+  "37",
+  "38",
+  "39",
+  "40",
+  "41",
+  "42",
+  "43",
 ].map((n) => `/gallery/tables/table-${n}.jpg`);
 
 export default function WorkPage() {
@@ -29,12 +47,15 @@ export default function WorkPage() {
       </p>
 
       <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        {PROJECTS.map((project, index) => (
+          <ProjectCard key={project.slug} project={project} priority={index < 3} />
         ))}
       </div>
 
-      <section id="tables" className="mt-24 scroll-mt-24 border-t border-line pt-16">
+      <section
+        id="tables"
+        className="mt-24 scroll-mt-24 border-t border-line pt-16"
+      >
         <h2 className="font-display text-2xl font-semibold text-foreground">
           More From the Shop
         </h2>

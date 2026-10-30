@@ -1,205 +1,155 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getProject } from "@/data/projects";
 
+const featured = ["county-line-table", "log-house-kitchen", "laundry-room"].map(
+  (slug) => getProject(slug)!,
+);
+const craft = [
+  "p05-01.jpg",
+  "p05-02.jpg",
+  "p05-03.jpg",
+  "p06-01.jpg",
+  "p06-02.jpg",
+  "p06-03.jpg",
+];
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
-        <div className="grid gap-12 sm:grid-cols-2 sm:items-center">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
-              Handcrafted Woodworks
-            </p>
-            <h1 className="text-balance mt-4 font-display text-4xl font-semibold leading-tight text-foreground sm:text-6xl">
-              Furniture made to be kept.
-            </h1>
-            <p className="text-balance mt-6 max-w-xl text-lg leading-relaxed text-foreground/70">
-              Custom hardwood furniture, designed and built by the Gallagher
-              family.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/work"
-                className="rounded-full bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
-              >
-                View the Work
-              </Link>
-              <Link
-                href="/start-a-project"
-                className="rounded-full border border-wood/30 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-ember-dark hover:text-ember-dark"
-              >
-                Start a Project
-              </Link>
-            </div>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-            <Image
-              src="/gallery/kitchen/kitchen-05.jpg"
-              alt="Custom kitchen built by JMG Customs, sage cabinetry with white oak island"
-              fill
-              className="object-cover"
-              sizes="(min-width: 640px) 50vw, 100vw"
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* WORK */}
-      <section className="border-y border-line bg-wood/5">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <div className="max-w-xl">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
-              Work
-            </p>
-            <h2 className="mt-3 text-balance font-display text-3xl font-semibold text-foreground sm:text-4xl">
-              Every piece has a reason for being made.
-            </h2>
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <Link href="/work#tables" className="group block">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/gallery/tables/table-33.jpg"
-                  alt="Close up of a live edge walnut conference table with bowtie joinery"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <p className="mt-4 font-display text-lg font-semibold text-foreground group-hover:text-ember-dark">
-                Dining &amp; Occasional Tables
-              </p>
-            </Link>
-            <Link href="/work/log-house-kitchen" className="group block">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/gallery/kitchen/kitchen-15.jpg"
-                  alt="Full custom kitchen build with sage cabinetry"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <p className="mt-4 font-display text-lg font-semibold text-foreground group-hover:text-ember-dark">
-                Full Kitchen Build
-              </p>
-            </Link>
-          </div>
-          <Link
-            href="/work"
-            className="mt-8 inline-block text-sm font-semibold text-ember-dark hover:underline"
-          >
-            View the Work →
+      <section className="px-6 py-16 text-center sm:py-24">
+        <p className="eyebrow">JMG Customs · Handcrafted Woodworks</p>
+        <h1 className="mx-auto mt-5 max-w-4xl font-display text-5xl leading-tight sm:text-7xl">
+          Furniture made
+          <br />
+          to be kept.
+        </h1>
+        <p className="mx-auto mt-6 max-w-xl text-lg text-foreground/75">
+          Custom hardwood furniture, built and designed by Justin Gallagher.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link className="button" href="/work">
+            View the Work
+          </Link>
+          <Link className="button" href="/start-a-project">
+            Start a Project
           </Link>
         </div>
       </section>
-
-      {/* CUSTOM */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <div className="grid gap-10 sm:grid-cols-2 sm:items-center">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
-              Custom
-            </p>
-            <h2 className="text-balance mt-3 font-display text-3xl font-semibold leading-snug text-foreground sm:text-4xl">
-              Made for your home.
-              <br />
-              Made for your family.
-              <br />
-              Made to stay.
-            </h2>
-            <p className="mt-6 max-w-md leading-relaxed text-foreground/70">
-              A custom piece is designed around your room, built from wood you
-              helped choose, and made by people you actually know.
-            </p>
-            <Link
-              href="/start-a-project"
-              className="mt-6 inline-block text-sm font-semibold text-ember-dark hover:underline"
-            >
-              Start a Project →
-            </Link>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-            <Image
-              src="/gallery/tables/table-27.jpg"
-              alt="Custom dining table built by JMG Customs"
-              fill
-              className="object-cover"
-              sizes="(min-width: 640px) 50vw, 100vw"
-            />
-          </div>
+      <div className="relative aspect-[4/3] w-full bg-[#e9e5de] sm:aspect-[21/9]">
+        <Image
+          src="/revisions/boards-hero.webp"
+          alt="Handcrafted end grain cutting board set, showing the natural wood pattern"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          preload
+        />
+      </div>
+      <section className="bg-[#eee8dd] px-6 py-20 sm:py-28">
+        <h2 className="text-center font-display text-4xl sm:text-5xl">
+          Some of my Work
+        </h2>
+        <div className="mx-auto mt-12 grid max-w-7xl gap-10 md:grid-cols-3">
+          {featured.map((p) => (
+            <article key={p.slug}>
+              <Link
+                href={`/work/${p.slug}`}
+                className="relative block aspect-[3/4] bg-[#f5f1e9]"
+              >
+                <Image
+                  src={p.photos[0]}
+                  alt={p.heroAlt ?? p.title}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-contain"
+                />
+              </Link>
+              <h3 className="mt-5 font-display text-2xl">{p.title}</h3>
+              <p className="mt-2 text-sm text-foreground/70">
+                {p.slug === "county-line-table"
+                  ? "Maple · Custom Map Inlay"
+                  : `${p.type} · ${p.wood}`}
+              </p>
+              <Link href={`/work/${p.slug}`} className="button mt-5">
+                View the Project
+              </Link>
+            </article>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link href="/work" className="button">
+            View All Work
+          </Link>
         </div>
       </section>
-
-      {/* FAMILY */}
-      <section className="border-y border-line bg-wood/5">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <div className="grid gap-10 sm:grid-cols-2 sm:items-center">
-            <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-lg sm:order-1">
+      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
+        <div>
+          <p className="eyebrow">Made by hand</p>
+          <h2 className="mt-4 font-display text-4xl">
+            A small shop.
+            <br />A family business.
+            <br />A lot of sawdust.
+          </h2>
+          <p className="mt-6 leading-relaxed text-foreground/75">
+            A custom piece begins with your home, your ideas, and a conversation
+            with the people who will build it.
+          </p>
+          <Link href="/our-story" className="button mt-8">
+            Our Story
+          </Link>
+        </div>
+        <div className="relative aspect-[4/3]">
+          <Image
+            src="/images/family.jpg"
+            alt="The Gallagher family behind JMG Customs"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      </section>
+      <section className="bg-wood-dark py-20 text-background">
+        <div className="px-6 text-center">
+          <p className="eyebrow text-background/70">From the workshop</p>
+          <h2 className="mt-4 font-display text-4xl">
+            Before it’s furniture, it’s just wood.
+          </h2>
+        </div>
+        <div
+          className="mt-10 flex overflow-x-auto"
+          aria-label="Workshop photographs"
+        >
+          {craft.map((photo, i) => (
+            <div
+              key={photo}
+              className="relative aspect-square w-1/6 min-w-40 shrink-0"
+            >
               <Image
-                src="/images/family.jpg"
-                alt="The Gallagher family, owners of JMG Customs"
+                src={`/revisions/${photo}`}
+                alt={`Woodworking process: ${["selecting lumber", "clamping joints", "cutting boards", "fitting a joint", "preparing timber", "finished wood grain"][i]}`}
                 fill
+                sizes="(min-width: 960px) 17vw, 160px"
                 className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
               />
             </div>
-            <div className="order-1 sm:order-2">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
-                Family
-              </p>
-              <h2 className="text-balance mt-3 font-display text-3xl font-semibold text-foreground sm:text-4xl">
-                A small shop. A family business. A lot of sawdust.
-              </h2>
-              <Link
-                href="/our-story"
-                className="mt-6 inline-block text-sm font-semibold text-ember-dark hover:underline"
-              >
-                Meet the Gallaghers →
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
-
-      {/* CRAFT — quiet, editorial, one line over a full-width photo */}
-      <section className="relative flex min-h-[70vh] items-end overflow-hidden sm:min-h-[80vh]">
-        <Image
-          src="/gallery/tables/table-11.jpg"
-          alt="Rough lumber and a table build in progress on the JMG Customs shop floor"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-wood-dark/80 via-wood-dark/10 to-transparent" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">
-          <h2 className="text-balance max-w-xl font-display text-3xl font-semibold text-background sm:text-4xl">
-            Before it&apos;s furniture, it&apos;s just wood.
-          </h2>
-          <Link
-            href="/the-craft"
-            className="mt-5 inline-block text-sm font-semibold text-background/90 hover:underline"
-          >
-            Explore the Craft →
+        <div className="mt-10 text-center">
+          <Link href="/the-craft" className="button">
+            Explore the Craft
           </Link>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="mx-auto max-w-6xl px-6 py-24 text-center sm:py-32">
-        <h2 className="text-balance mx-auto max-w-2xl font-display text-3xl font-semibold text-foreground sm:text-5xl">
-          Let&apos;s build something worth keeping.
+      <section className="px-6 py-24 text-center">
+        <h2 className="font-display text-4xl sm:text-5xl">
+          Made for them. Built to last.
         </h2>
-        <p className="mx-auto mt-5 max-w-md text-foreground/70">
-          Tell us what you&apos;re imagining, and we&apos;ll start with a
-          conversation.
+        <p className="mt-5">Every project is different.</p>
+        <p className="mx-auto mt-3 max-w-xl text-foreground/70">
+          If you’re thinking about having something made specifically for your
+          home, we’d love to hear what you’re imagining.
         </p>
-        <Link
-          href="/start-a-project"
-          className="mt-8 inline-block rounded-full bg-wood-dark px-8 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
-        >
+        <Link href="/start-a-project" className="button mt-8">
           Start a Project
         </Link>
       </section>

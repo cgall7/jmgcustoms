@@ -1,0 +1,14 @@
+{
+  "source": "JMG CUSTOMS website revisions round 2.pdf and existing repository photography",
+  "tool": "built-in image_gen",
+  "policy": "White muslin studio backgrounds for freestanding furniture; preserve actual room settings for installed work. Retain original detail photographs in galleries.",
+  "prompts": {
+    "studio_covers": "Replace room/workshop background with soft white muslin cloth, natural shadows, entire furniture visible. Preserve silhouette, wood grain, proportions and construction; no invented joints or parts. Professional neutral lighting.",
+    "products": "Clean professional lighting, neutral white balance, authentic wood grain. Preserve product features and construction. Replace unrelated background clutter with white muslin.",
+    "boards_hero": "Preserve the exact cutting board set and extend the white muslin background to a wide 21:9 banner. Keep both boards fully visible.",
+    "laundry": "Balanced natural exposure, neutral whites and authentic warm wood. Preserve cabinetry, appliances, hardware and composition.",
+    "privacy": "Strongly blur both children's entire faces so no facial details remain identifiable. Preserve adult, furniture and workshop. Subtle exposure correction."
+  },
+  "outputs": ["public/revisions/altar-cover.webp", "public/revisions/bed-cover.webp", "public/revisions/crib-cover.webp", "public/revisions/gathering-cover.webp", "public/revisions/wahoo-edited.webp", "public/revisions/play-kitchen-edited.webp", "public/revisions/dining-edited.webp", "public/revisions/boards-hero.webp", "public/revisions/laundry-edited.webp", "public/revisions/workshop-privacy.webp"],
+  "limitations": "AI retouching can introduce small differences. Original detail photos remain available in galleries. No Bible stand image or prices beyond Wahoo ($100) were supplied."
+}

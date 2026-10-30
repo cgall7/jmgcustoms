@@ -11,6 +11,7 @@ export type Project = {
    * placeholder frame instead of a stand-in photo. */
   photos: string[];
   heroAlt?: string;
+  cover?: string;
 };
 
 // Array order is the /work display order: tables lead, kitchen and room
@@ -20,14 +21,17 @@ export const PROJECTS: Project[] = [
     slug: "county-line-table",
     title: "The County Line Table",
     wood: "Maple",
-    type: "Custom Bar Table",
+    type: "Custom Map Inlay",
     summary:
       "A custom bar table inlaid with a map of Chester County, made to be enjoyed by everyone who comes to the farm to visit and spend time with the horses.",
     story: [
       "The client had a map of Chester County and wanted a unique way to display it, so we inlaid it into a custom bar table — a piece made to be enjoyed by everyone who comes to the farm to visit and spend time with the horses.",
     ],
-    photos: ["01"].map((n) => `/gallery/county-line-table/county-line-${n}.jpg`),
-    heroAlt: "Round walnut bar table with a Chester County map inlaid in the top",
+    photos: ["01"].map(
+      (n) => `/gallery/county-line-table/county-line-${n}.jpg`,
+    ),
+    heroAlt:
+      "Round maple bar table with a Chester County map inlaid in the top",
   },
   {
     slug: "dietl-family-kitchen-table",
@@ -42,9 +46,10 @@ export const PROJECTS: Project[] = [
       "The goal was to build something beautiful enough to stand out, but durable enough to be lived around for years to come. They were drawn to the natural knots in the wood and its warm, light tone, so we paired the tabletop with fluted legs and breadboard ends to give it a look that feels both familiar and unexpected.",
     ],
     photos: ["02", "03", "04", "05", "06", "07", "08"].map(
-      (n) => `/gallery/dietl-family-kitchen-table/dietl-${n}.jpg`
+      (n) => `/gallery/dietl-family-kitchen-table/dietl-${n}.jpg`,
     ),
-    heroAlt: "The Dietl family kitchen table with black chairs in their open kitchen",
+    heroAlt:
+      "The Dietl family kitchen table with black chairs in their open kitchen",
   },
   {
     slug: "ascension-press-conference-table",
@@ -58,7 +63,7 @@ export const PROJECTS: Project[] = [
       "We designed this live edge table that showcases the bowtie joinery.",
     ],
     photos: ["01", "02", "03", "04", "05", "06", "07"].map(
-      (n) => `/gallery/ascension-press-conference-table/ascension-${n}.jpg`
+      (n) => `/gallery/ascension-press-conference-table/ascension-${n}.jpg`,
     ),
   },
   {
@@ -69,12 +74,12 @@ export const PROJECTS: Project[] = [
     summary: "A kitchen table built to showcase the character of English elm.",
     story: [],
     photos: ["01", "02", "03", "04", "05", "06", "07", "08"].map(
-      (n) => `/gallery/english-elm-dining-table/elm-${n}.jpg`
+      (n) => `/gallery/english-elm-dining-table/elm-${n}.jpg`,
     ),
   },
   {
     slug: "log-house-kitchen",
-    title: "Log House Kitchen",
+    title: "Log Cabin Kitchen Renovation",
     wood: "Custom Cabinetry",
     type: "Full Kitchen Renovation",
     summary:
@@ -82,9 +87,9 @@ export const PROJECTS: Project[] = [
     story: [
       "Designed and built for a family of 14, with handcrafted cabinetry and a space made for gathering and everyday life.",
     ],
-    photos: [
-      "02", "05", "08", "11", "15", "17", "20", "28",
-    ].map((n) => `/gallery/kitchen/kitchen-${n}.jpg`),
+    photos: ["02", "05", "08", "11", "15", "17", "20", "28"].map(
+      (n) => `/gallery/kitchen/kitchen-${n}.jpg`,
+    ),
     heroAlt: "Custom kitchen with handcrafted cabinetry",
   },
   {
@@ -108,7 +113,7 @@ export const PROJECTS: Project[] = [
       "We designed this piece around the natural knots and warm tones of the wood, while leaving room for the family to display photos and artwork that make the space feel like their own.",
     ],
     photos: ["01", "02", "03", "04", "05"].map(
-      (n) => `/gallery/family-room-entertainment-center/entertainment-${n}.jpg`
+      (n) => `/gallery/family-room-entertainment-center/entertainment-${n}.jpg`,
     ),
   },
   {
@@ -121,11 +126,13 @@ export const PROJECTS: Project[] = [
     story: [
       "This platform bed was made as a gift for a newlywed couple, with a simple design that lets the natural character of the wood take center stage.",
     ],
-    photos: ["01", "02", "03"].map((n) => `/gallery/platform-bed/platform-bed-${n}.jpg`),
+    photos: ["01", "02", "03"].map(
+      (n) => `/gallery/platform-bed/platform-bed-${n}.jpg`,
+    ),
   },
   {
     slug: "herringbone-heirloom-crib",
-    title: "The Herringbone Heirloom",
+    title: "The Herringbone Bedside Crib",
     wood: "Birds Eye Maple",
     type: "Baby Crib with Detachable Side",
     summary:
@@ -135,8 +142,8 @@ export const PROJECTS: Project[] = [
       "We carried the same natural character and timeless feel into the crib, adding a herringbone detail to give it something of its own. The goal was to make a piece that would work beautifully in their home now, but could one day be passed down to their child's children.",
       "A crib made for the beginning of their family, with the hope that it would become part of their family for generations.",
     ],
-    photos: ["01", "02", "03", "04", "05", "06", "07", "08"].map(
-      (n) => `/gallery/herringbone-heirloom-crib/crib-${n}.jpg`
+    photos: ["02", "03", "04", "05", "06", "07", "08"].map(
+      (n) => `/gallery/herringbone-heirloom-crib/crib-${n}.jpg`,
     ),
   },
   {
@@ -150,7 +157,7 @@ export const PROJECTS: Project[] = [
       "Full room design. We designed, built, and painted the lockers, benches, and details on the walls.",
     ],
     photos: ["01", "02", "03", "04", "05", "06", "07", "08"].map(
-      (n) => `/gallery/ultimate-drop-zone/drop-zone-${n}.jpg`
+      (n) => `/gallery/ultimate-drop-zone/drop-zone-${n}.jpg`,
     ),
   },
   {
@@ -159,10 +166,69 @@ export const PROJECTS: Project[] = [
     wood: "Black Walnut",
     type: "Custom Design and Build",
     summary: "Clean, simple lines designed to point to Heaven.",
-    story: ["Design with the intention that the clean and simple lines point to Heaven."],
-    photos: ["01", "02", "03"].map((n) => `/gallery/altar-for-chapel/altar-${n}.jpg`),
+    story: [
+      "Design with the intention that the clean and simple lines point to Heaven.",
+    ],
+    photos: ["01", "02", "03"].map(
+      (n) => `/gallery/altar-for-chapel/altar-${n}.jpg`,
+    ),
   },
 ];
+
+// Supplied round-two photography. Original project URLs stay stable.
+const revisionPhotos: Record<string, string[]> = {
+  "county-line-table": ["p02-01.png"],
+  "platform-bed": ["p18-01.jpg", "p19-01.jpg", "p20-01.jpg", "p21-01.jpg"],
+  "ultimate-drop-zone": Array.from(
+    { length: 11 },
+    (_, i) => `p${30 + i}-01.jpg`,
+  ),
+  "english-elm-dining-table": ["p42-01.jpg"],
+  "log-house-kitchen": ["p03-01.png"],
+  "laundry-room": [
+    "laundry-edited.webp",
+    "p44-01.jpg",
+    "p45-01.jpg",
+    "p46-01.jpg",
+    "p47-01.jpg",
+  ],
+  "altar-for-chapel": ["p41-01.jpg"],
+};
+for (const project of PROJECTS) {
+  const additions = revisionPhotos[project.slug];
+  if (additions)
+    project.photos = [
+      ...additions.map((n) => `/revisions/${n}`),
+      ...project.photos,
+    ];
+}
+PROJECTS.splice(1, 0, {
+  slug: "massive-gathering-table",
+  title: "Massive Gathering Table",
+  wood: "White Oak",
+  type: "Custom Table",
+  summary: "A generous white oak table made for gathering.",
+  story: [
+    "A generous white oak tabletop, sculpted pedestal bases, and room to gather. From the first boards in the workshop to its place in the home, the natural character of the wood leads the design.",
+  ],
+  photos: [
+    "p22-01.jpg",
+    "workshop-privacy.webp",
+    ...Array.from({ length: 6 }, (_, i) => `p${24 + i}-01.jpg`),
+  ].map((n) => `/revisions/${n}`),
+});
+
+const studioCovers: Record<string, string> = {
+  "platform-bed": "bed-cover.webp",
+  "herringbone-heirloom-crib": "crib-cover.webp",
+  "altar-for-chapel": "altar-cover.webp",
+  "massive-gathering-table": "gathering-cover.webp",
+  "dietl-family-kitchen-table": "gathering-cover.webp",
+};
+for (const project of PROJECTS) {
+  if (studioCovers[project.slug])
+    project.cover = `/revisions/${studioCovers[project.slug]}`;
+}
 
 export function getProject(slug: string) {
   return PROJECTS.find((p) => p.slug === slug);

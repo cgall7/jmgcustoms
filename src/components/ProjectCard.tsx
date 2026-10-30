@@ -2,19 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ project }: { project: Project }) {
-  const cover = project.photos[0];
+export function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
+  const cover = project.cover ?? project.photos[0];
 
   return (
     <Link href={`/work/${project.slug}`} className="group block">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-wood/5">
+      <div className="relative aspect-[4/3] overflow-hidden  bg-[#f1ede5]">
         {cover ? (
           <Image
             src={cover}
             alt={project.heroAlt ?? project.title}
             fill
-            className="object-cover transition-transform group-hover:scale-105"
-            sizes="(min-width: 640px) 33vw, 100vw"
+            loading={priority ? "eager" : "lazy"}
+            className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            sizes="(min-width: 1152px) 347px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-wood/25 bg-wood/[0.04] px-4 text-center">
