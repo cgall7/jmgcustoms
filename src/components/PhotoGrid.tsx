@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import photoSizes from "@/data/photo-sizes.json";
+import photoAliases from "@/data/photo-aliases.json";
 
 export function PhotoGrid({
-  photos,
+  photos: suppliedPhotos,
   alt,
   priority = false,
 }: {
@@ -11,6 +13,9 @@ export function PhotoGrid({
   alt: string;
   priority?: boolean;
 }) {
+  const aliases = photoAliases as Record<string, string>;
+  const photos = [...new Map(suppliedPhotos.map(src => [aliases[src] ?? src, src])).values()];
+  const dimensions = photoSizes as Record<string, {width: number; height: number}>;
   const dialog = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState(0);
   const move = (delta: number) =>
@@ -22,7 +27,7 @@ export function PhotoGrid({
           <button
             key={`${src}-${i}`}
             type="button"
-            className={`relative block w-full bg-[#eeeae2] ${i === 0 ? "aspect-[4/3] sm:col-span-2 sm:aspect-[16/10]" : "aspect-[4/3]"}`}
+            className={`gallery-photo relative block w-full overflow-hidden ${i === 0 ? "sm:col-span-2" : ""}`}
             onClick={() => {
               setActive(i);
               dialog.current?.showModal();
@@ -32,14 +37,14 @@ export function PhotoGrid({
             <Image
               src={src}
               alt={`${alt} — photograph ${i + 1}`}
-              fill
-              className="object-contain"
+              width={dimensions[src]?.width ?? 1600}
+              height={dimensions[src]?.height ?? 1200}
+              quality={90}
+              className="h-auto max-h-[78vh] w-full object-contain"
               sizes={i === 0 ? "(min-width: 1280px) 1232px, calc(100vw - 48px)" : "(min-width: 640px) 50vw, 100vw"}
               loading={priority && i === 0 ? "eager" : "lazy"}
             />
-            <span className="absolute bottom-3 right-3 bg-background px-3 py-1 text-xs text-foreground">
-              View full photo +
-            </span>
+
           </button>
         ))}
       </div>
@@ -65,18 +70,20 @@ export function PhotoGrid({
           <button
             type="button"
             autoFocus
-            className="button"
+            className="photo-close"
+            aria-label="Close photo"
             onClick={() => dialog.current?.close()}
           >
-            Close ×
+            ×
           </button>
         </div>
-        <div className="relative h-[70dvh]">
+        <div className="relative h-[70dvh] cursor-zoom-out" onClick={() => dialog.current?.close()}>
           <Image
             src={photos[active]}
             alt={`${alt} — photograph ${active + 1}`}
             fill
             sizes="95vw"
+            unoptimized
             className="object-contain"
           />
         </div>

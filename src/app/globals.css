@@ -122,3 +122,10 @@ body:has(dialog[open]) {
     animation: none !important;
   }
 }
+
+.gallery-photo { cursor: zoom-in; background: #f0ece4; padding: clamp(8px, 1.5vw, 20px); align-self: stretch; display: flex; align-items: center; justify-content: center; }
+.gallery-photo img { transition: opacity .2s ease; }
+.gallery-photo:hover img { opacity: .94; }
+.photo-close { display: grid; place-items: center; width: 44px; height: 44px; font-size: 2rem; line-height: 1; background: transparent; color: inherit; }
+.photo-dialog { background: #191714; color: #f6f0e5; }
+.photo-dialog .button { background: transparent; color: #f6f0e5; border-color: #655d50; }
