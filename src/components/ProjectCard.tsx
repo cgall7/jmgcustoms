@@ -12,6 +12,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
           <Image
             src={cover}
             alt={project.heroAlt ?? project.title}
+            quality={90}
             fill
             loading={priority ? "eager" : "lazy"}
             className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
