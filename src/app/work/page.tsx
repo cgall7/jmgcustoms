@@ -1,36 +1,12 @@
 import type { Metadata } from "next";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
-import { PhotoGrid } from "@/components/PhotoGrid";
 
 export const metadata: Metadata = {
   title: "The Work | JMG Customs",
   description:
     "Custom furniture and renovations from JMG Customs — every piece started with a person, a space, and an idea.",
 };
-
-const SHOP_FLOOR_SHOTS = [
-  "05",
-  "09",
-  "13",
-  "17",
-  "27",
-  "29",
-  "30",
-  "31",
-  "32",
-  "33",
-  "34",
-  "35",
-  "36",
-  "37",
-  "38",
-  "39",
-  "40",
-  "41",
-  "42",
-  "43",
-].map((n) => `/gallery/tables/table-${n}.jpg`);
 
 export default function WorkPage() {
   return (
@@ -52,18 +28,7 @@ export default function WorkPage() {
         ))}
       </div>
 
-      <section
-        id="tables"
-        className="mt-24 scroll-mt-24 border-t border-line pt-16"
-      >
-        <h2 className="font-display text-2xl font-semibold text-foreground">
-          More From the Shop
-        </h2>
-        <p className="mt-2 max-w-xl text-foreground/70">
-          A closer look at tables and pieces built along the way.
-        </p>
-        <PhotoGrid photos={SHOP_FLOOR_SHOTS} alt="Custom table" />
-      </section>
+
     </div>
   );
 }
