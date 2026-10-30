@@ -8,10 +8,12 @@ export function PhotoGrid({
   photos: suppliedPhotos,
   alt,
   priority = false,
+  layout = "editorial",
 }: {
   photos: string[];
   alt: string;
   priority?: boolean;
+  layout?: "editorial" | "curated";
 }) {
   const aliases = photoAliases as Record<string, string>;
   const photos = [...new Map(suppliedPhotos.map(src => [aliases[src] ?? src, src])).values()];
@@ -22,7 +24,7 @@ export function PhotoGrid({
     setActive((i) => (i + delta + photos.length) % photos.length);
   return (
     <>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+      <div className={`mt-8 grid gap-6 sm:grid-cols-2 ${layout === "curated" ? "curated-gallery" : ""}`}>
         {photos.map((src, i) => (
           <button
             key={`${src}-${i}`}

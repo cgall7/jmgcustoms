@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PhotoGrid } from "@/components/PhotoGrid";
 
 export const metadata: Metadata = {
@@ -38,7 +37,7 @@ const STEPS = [
 export default function TheCraftPage() {
   return (
     <div>
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+      <div className="mx-auto max-w-4xl px-6 py-16 sm:py-24">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-ember-dark">
           The Craft
         </p>
@@ -54,18 +53,11 @@ export default function TheCraftPage() {
         </p>
       </div>
 
-      <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
-        <Image
-          src="/gallery/tables/table-20.jpg"
-          alt="Live edge tabletop mid build in the JMG Customs workshop"
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority
-        />
+      <div className="mx-auto max-w-4xl px-6 pb-4">
+        <PhotoGrid photos={["/revisions/p13-02.jpg"]} alt="Prepared hardwood boards stacked in the workshop" layout="curated" priority />
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+      <div className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
         <section>
           <h2 className="font-display text-2xl font-semibold text-foreground">
             The details you don&apos;t notice are often the ones that matter
@@ -123,38 +115,30 @@ export default function TheCraftPage() {
         </p>
       </div>
 
-      <section className="bg-[#eee8dd] py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="border-t border-line bg-background py-20">
+        <div className="mx-auto max-w-4xl px-6">
           <p className="eyebrow">At the bench</p>
           <h2 className="mt-4 font-display text-4xl">Then we build.</h2>
           <PhotoGrid
-            photos={[
-              "p05-01.jpg",
-              "p06-02.jpg",
-              "p06-03.jpg",
-              "p09-01.jpg",
-              "p10-01.jpg",
-              "p11-01.jpg",
-              "p12-01.jpg",
-              "p13-01.jpg",
-              "p13-02.jpg",
-            ].map((n) => `/revisions/${n}`)}
+            photos={["p06-02.jpg", "p10-01.jpg", "p12-01.jpg"].map((n) => `/revisions/${n}`)}
+            layout="curated"
             alt="Building in the JMG workshop"
           />
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-4xl px-6 py-20">
         <h2 className="font-display text-4xl">Joinery</h2>
         <PhotoGrid
-          photos={["p08-01.jpg", "p15-01.jpg", "p16-01.jpg"].map(
+          photos={["p15-01.jpg", "p16-01.jpg"].map(
             (n) => `/revisions/${n}`,
           )}
+          layout="curated"
           alt="Hand fitted woodworking joinery"
         />
       </section>
 
       <div className="bg-wood/5">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+        <div className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
           <h2 className="font-display text-3xl font-semibold text-foreground">
             Our Process
           </h2>

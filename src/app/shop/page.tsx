@@ -9,13 +9,13 @@ const products = [
   {
     name: "Wahoo Marble Game",
     detail: "$100",
-    photos: ["wahoo-edited.webp", "p49-01.jpg"],
+    photos: ["wahoo-edited.webp"],
   },
   {
     name: "Kid’s Play Kitchen",
     detail:
       "Available in green, dusty rose, and white. Contact us for pricing.",
-    photos: ["play-kitchen-edited.webp", "p50-01.jpg"],
+    photos: ["play-kitchen-edited.webp"],
   },
   {
     name: "Bible Stand",
@@ -25,29 +25,18 @@ const products = [
   {
     name: "Dining Table",
     detail: "Optional benches available as an add on. Contact us for pricing.",
-    photos: [
-      "dining-edited.webp",
-      "p52-01.jpg",
-      "p51-01.jpg",
-      ...Array.from({ length: 5 }, (_, i) => `p${53 + i}-01.jpg`),
-    ],
+    photos: ["dining-edited.webp"],
   },
   {
     name: "Cutting Board Set",
     detail: "Contact us for pricing and availability.",
-    photos: [
-      "boards-hero.webp",
-      "p61-01.jpg",
-      "p59-01.jpg",
-      "p60-01.jpg",
-      ...Array.from({ length: 8 }, (_, i) => `p${62 + i}-01.jpg`),
-    ],
+    photos: ["p61-01.jpg", "p59-01.jpg", "p66-01.jpg"],
   },
 ];
 export default function ShopPage() {
   return (
     <>
-      <header className="mx-auto max-w-6xl px-6 py-20">
+      <header className="mx-auto max-w-4xl px-6 py-20">
         <p className="eyebrow">Shop</p>
         <h1 className="mt-4 font-display text-5xl">Things from the shop.</h1>
         <p className="mt-5 max-w-xl text-foreground/70">
@@ -56,13 +45,14 @@ export default function ShopPage() {
         </p>
       </header>
       {products.map((p, i) => (
-        <section key={p.name} className={i % 2 === 0 ? "bg-[#eee8dd]" : ""}>
-          <div className="mx-auto max-w-6xl px-6 py-16">
+        <section key={p.name} className="border-t border-line bg-background">
+          <div className="mx-auto max-w-4xl px-6 py-16">
             <h2 className="font-display text-3xl">{p.name}</h2>
             <p className="mt-3 text-foreground/70">{p.detail}</p>
             {p.photos.length > 0 && (
               <PhotoGrid
                 photos={p.photos.map((n) => `/revisions/${n}`)}
+                layout="curated"
                 alt={p.name}
                   priority={i === 0}
               />
