@@ -152,15 +152,7 @@ export default function TheCraftPage() {
           alt="Hand fitted woodworking joinery"
         />
       </section>
-      <section className="bg-[#eee8dd] py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-display text-4xl">The finish</h2>
-          <PhotoGrid
-            photos={["/revisions/p16-02.jpg"]}
-            alt="Applying the finish by hand"
-          />
-        </div>
-      </section>
+
       <div className="bg-wood/5">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <h2 className="font-display text-3xl font-semibold text-foreground">

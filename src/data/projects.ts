@@ -175,33 +175,6 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// Supplied round-two photography. Original project URLs stay stable.
-const revisionPhotos: Record<string, string[]> = {
-  "county-line-table": ["p02-01.png"],
-  "platform-bed": ["p18-01.jpg", "p19-01.jpg", "p20-01.jpg", "p21-01.jpg"],
-  "ultimate-drop-zone": Array.from(
-    { length: 11 },
-    (_, i) => `p${30 + i}-01.jpg`,
-  ),
-  "english-elm-dining-table": ["p42-01.jpg"],
-  "log-house-kitchen": ["p03-01.png"],
-  "laundry-room": [
-    "laundry-edited.webp",
-    "p44-01.jpg",
-    "p45-01.jpg",
-    "p46-01.jpg",
-    "p47-01.jpg",
-  ],
-  "altar-for-chapel": ["p41-01.jpg"],
-};
-for (const project of PROJECTS) {
-  const additions = revisionPhotos[project.slug];
-  if (additions)
-    project.photos = [
-      ...additions.map((n) => `/revisions/${n}`),
-      ...project.photos,
-    ];
-}
 PROJECTS.splice(1, 0, {
   slug: "massive-gathering-table",
   title: "Massive Gathering Table",
@@ -218,16 +191,67 @@ PROJECTS.splice(1, 0, {
   ].map((n) => `/revisions/${n}`),
 });
 
-const studioCovers: Record<string, string> = {
-  "platform-bed": "bed-cover.webp",
-  "herringbone-heirloom-crib": "crib-cover.webp",
-  "altar-for-chapel": "altar-cover.webp",
-  "massive-gathering-table": "gathering-cover.webp",
-  "dietl-family-kitchen-table": "gathering-cover.webp",
+
+// Curated after visual review: finished work, strong focus, distinct views.
+const curatedPhotos: Record<string, string[]> = {
+  "county-line-table": [
+    "/revisions/p02-01.png"
+  ],
+  "massive-gathering-table": [
+    "/revisions/gathering-cover.webp",
+    "/revisions/p28-01.jpg",
+    "/revisions/p27-01.jpg"
+  ],
+  "dietl-family-kitchen-table": [
+    "/revisions/gathering-cover.webp",
+    "/gallery/dietl-family-kitchen-table/dietl-02.jpg",
+    "/gallery/dietl-family-kitchen-table/dietl-08.jpg"
+  ],
+  "ascension-press-conference-table": [
+    "/gallery/ascension-press-conference-table/ascension-01.jpg",
+    "/gallery/ascension-press-conference-table/ascension-04.jpg",
+    "/gallery/ascension-press-conference-table/ascension-06.jpg"
+  ],
+  "english-elm-dining-table": [
+    "/gallery/english-elm-dining-table/elm-02.jpg",
+    "/gallery/english-elm-dining-table/elm-03.jpg",
+    "/gallery/english-elm-dining-table/elm-04.jpg"
+  ],
+  "log-house-kitchen": [
+    "/revisions/p03-01.png",
+    "/gallery/kitchen/kitchen-15.jpg",
+    "/gallery/kitchen/kitchen-28.jpg"
+  ],
+  "laundry-room": [
+    "/revisions/laundry-edited.webp",
+    "/revisions/p45-01.jpg"
+  ],
+  "family-room-entertainment-center": [
+    "/gallery/family-room-entertainment-center/entertainment-01.jpg",
+    "/gallery/family-room-entertainment-center/entertainment-04.jpg",
+    "/gallery/family-room-entertainment-center/entertainment-05.jpg"
+  ],
+  "platform-bed": [
+    "/revisions/bed-cover.webp"
+  ],
+  "herringbone-heirloom-crib": [
+    "/revisions/crib-cover.webp",
+    "/gallery/herringbone-heirloom-crib/crib-04.jpg",
+    "/gallery/herringbone-heirloom-crib/crib-06.jpg"
+  ],
+  "ultimate-drop-zone": [
+    "/revisions/p30-01.jpg",
+    "/revisions/p37-01.jpg",
+    "/revisions/p39-01.jpg"
+  ],
+  "altar-for-chapel": [
+    "/gallery/altar-for-chapel/altar-01.jpg",
+    "/gallery/altar-for-chapel/altar-03.jpg"
+  ]
 };
 for (const project of PROJECTS) {
-  if (studioCovers[project.slug])
-    project.cover = `/revisions/${studioCovers[project.slug]}`;
+  project.photos = curatedPhotos[project.slug];
+  project.cover = project.photos[0];
 }
 
 export function getProject(slug: string) {
