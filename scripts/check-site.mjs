@@ -37,7 +37,10 @@ const oldProject=await fetch(base+'/work/dietl-family-kitchen-table',{redirect:'
 if(oldProject.status !== 308 || !oldProject.headers.get('location')?.endsWith('/work/massive-gathering-table')) throw new Error('Old Dietl link must redirect to Gathering Table');
 const home=await(await fetch(base+'/')).text();
 if(!home.includes('Massive Gathering Table') || !home.includes('href="/work/massive-gathering-table"')) throw new Error('Home feature name/link mismatch');
-for(const removed of ['p06-03.jpg','p16-02.jpg']) if(home.includes(removed)) throw new Error(`Removed soft photo on Home: ${removed}`);
+for(const removed of ['p06-03.jpg','p16-02.jpg','boards-hero.webp']) if(home.includes(removed)) throw new Error(`Removed soft photo on Home: ${removed}`);
+const shop=await(await fetch(base+'/shop')).text();
+if(shop.includes('p66-01.jpg')) throw new Error('Soft cutting board close-up remains in Shop');
+if(!home.includes('p61-01.jpg')) throw new Error('Home should use the original overhead photo');
 const sitemap=await(await fetch(base+'/sitemap.xml')).text();
 if(sitemap.includes('dietl-family-kitchen-table')) throw new Error('Duplicate project still in sitemap');
 console.log(`PASS: ${routes.length} routes, ${assets.size} image files, ${links.size} internal links, unique project covers, canonical naming, legacy redirect, sitemap, 404 and curated galleries.`);

@@ -27,15 +27,19 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <div className="relative aspect-[4/3] w-full bg-[#e9e5de] sm:aspect-[21/9]">
-        <Image
-          src="/revisions/boards-hero.webp"
-          alt="Handcrafted end grain cutting board set, showing the natural wood pattern"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          preload
-        />
+      <div className="w-full bg-[#f0ece4]">
+        <div className="mx-auto max-w-5xl">
+          <Image
+            src="/revisions/p61-01.jpg"
+            alt="Overhead photograph of the end grain cutting board set on white cloth"
+            width={2048}
+            height={1536}
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            quality={90}
+            className="h-auto w-full"
+            preload
+          />
+        </div>
       </div>
       <section className="bg-[#eee8dd] px-6 py-20 sm:py-28">
         <h2 className="text-center font-display text-4xl sm:text-5xl">
