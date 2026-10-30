@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { PhotoGrid } from "@/components/PhotoGrid";
 
 export const metadata: Metadata = {
   title: "The Craft | JMG Customs",
-  description: "How JMG Customs selects wood, builds, and finishes every piece by hand.",
+  description:
+    "How JMG Customs selects wood, builds, and finishes every piece by hand.",
 };
 
 const STEPS = [
@@ -44,11 +46,11 @@ export default function TheCraftPage() {
           Before it&apos;s furniture, it&apos;s just wood.
         </h1>
         <p className="mt-5 max-w-xl leading-relaxed text-foreground/70">
-          Every piece begins with rough lumber. There&apos;s a lot that
-          happens between that first board and the finished piece sitting in
-          someone&apos;s home. We select. We measure. We cut. We fit. We
-          sand. We finish. And sometimes we start over — that&apos;s part of
-          making something by hand.
+          Every piece begins with rough lumber. There&apos;s a lot that happens
+          between that first board and the finished piece sitting in
+          someone&apos;s home. We select. We measure. We cut. We fit. We sand.
+          We finish. And sometimes we start over — that&apos;s part of making
+          something by hand.
         </p>
       </div>
 
@@ -70,12 +72,12 @@ export default function TheCraftPage() {
             most.
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-foreground/70">
-            Good furniture isn&apos;t just about what you see — it&apos;s
-            about what&apos;s underneath it. We use traditional woodworking
-            techniques where they make sense for the piece. We don&apos;t use
-            a complicated joint just so we can say we used one. Every joint
-            has a job. Every material has a reason. Every detail is
-            considered with the life of the piece in mind.
+            Good furniture isn&apos;t just about what you see — it&apos;s about
+            what&apos;s underneath it. We use traditional woodworking techniques
+            where they make sense for the piece. We don&apos;t use a complicated
+            joint just so we can say we used one. Every joint has a job. Every
+            material has a reason. Every detail is considered with the life of
+            the piece in mind.
           </p>
         </section>
 
@@ -85,9 +87,9 @@ export default function TheCraftPage() {
               The Wood
             </h3>
             <p className="mt-2 leading-relaxed text-foreground/70">
-              We look at grain, color, character, movement, and how each
-              board will work within the finished design. We choose the
-              board that fits each job — not simply whatever is closest.
+              We look at grain, color, character, movement, and how each board
+              will work within the finished design. We choose the board that
+              fits each job — not simply whatever is closest.
             </p>
           </div>
           <div>
@@ -95,9 +97,9 @@ export default function TheCraftPage() {
               Joinery
             </h3>
             <p className="mt-2 leading-relaxed text-foreground/70">
-              Mortise and tenon. Dovetails. Dowels. Carefully fitted joints.
-              The specific construction depends on the piece, but the
-              principle stays the same: build it so it can live a long life.
+              Mortise and tenon. Dovetails. Dowels. Carefully fitted joints. The
+              specific construction depends on the piece, but the principle
+              stays the same: build it so it can live a long life.
             </p>
           </div>
           <div>
@@ -105,10 +107,9 @@ export default function TheCraftPage() {
               The Finish
             </h3>
             <p className="mt-2 leading-relaxed text-foreground/70">
-              We use hand applied finishes chosen to protect the furniture
-              while allowing the natural character of the wood to remain
-              visible. You should be able to see the grain and feel the
-              material.
+              We use hand applied finishes chosen to protect the furniture while
+              allowing the natural character of the wood to remain visible. You
+              should be able to see the grain and feel the material.
             </p>
           </div>
         </div>
@@ -122,15 +123,53 @@ export default function TheCraftPage() {
         </p>
       </div>
 
-      <div className="border-t border-line bg-wood/5">
+      <section className="bg-[#eee8dd] py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="eyebrow">At the bench</p>
+          <h2 className="mt-4 font-display text-4xl">Then we build.</h2>
+          <PhotoGrid
+            photos={[
+              "p05-01.jpg",
+              "p06-02.jpg",
+              "p06-03.jpg",
+              "p09-01.jpg",
+              "p10-01.jpg",
+              "p11-01.jpg",
+              "p12-01.jpg",
+              "p13-01.jpg",
+              "p13-02.jpg",
+            ].map((n) => `/revisions/${n}`)}
+            alt="Building in the JMG workshop"
+          />
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="font-display text-4xl">Joinery</h2>
+        <PhotoGrid
+          photos={["p08-01.jpg", "p15-01.jpg", "p16-01.jpg"].map(
+            (n) => `/revisions/${n}`,
+          )}
+          alt="Hand fitted woodworking joinery"
+        />
+      </section>
+      <section className="bg-[#eee8dd] py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="font-display text-4xl">The finish</h2>
+          <PhotoGrid
+            photos={["/revisions/p16-02.jpg"]}
+            alt="Applying the finish by hand"
+          />
+        </div>
+      </section>
+      <div className="bg-wood/5">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <h2 className="font-display text-3xl font-semibold text-foreground">
             Our Process
           </h2>
           <p className="mt-3 max-w-xl text-foreground/70">
             Every project starts with a conversation. You don&apos;t need to
-            arrive with a finished drawing — tell us what you&apos;re trying
-            to accomplish, and we&apos;ll figure out the rest together.
+            arrive with a finished drawing — tell us what you&apos;re trying to
+            accomplish, and we&apos;ll figure out the rest together.
           </p>
           <ol className="mt-12 space-y-10 border-l border-line pl-8">
             {STEPS.map((step) => (

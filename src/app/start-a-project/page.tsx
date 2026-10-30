@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { InquiryForm } from "@/components/InquiryForm";
 
 export const metadata: Metadata = {
   title: "Start a Project | JMG Customs",
@@ -57,7 +58,9 @@ function Field({
       <label htmlFor={id} className="block text-sm font-medium text-foreground">
         {label}
         {!required && (
-          <span className="ml-1 font-normal text-foreground/40">(optional)</span>
+          <span className="ml-1 font-normal text-foreground/40">
+            (optional)
+          </span>
         )}
       </label>
       {children}
@@ -66,7 +69,7 @@ function Field({
 }
 
 const inputClass =
-  "mt-2 w-full rounded-md border border-line bg-background px-4 py-2.5 text-foreground focus:border-ember-dark focus:outline-none";
+  "mt-2 w-full  border border-line bg-background px-4 py-2.5 text-foreground focus:border-ember-dark focus:outline-none";
 
 export default function StartAProjectPage() {
   return (
@@ -80,39 +83,71 @@ export default function StartAProjectPage() {
       <p className="mt-5 leading-relaxed text-foreground/70">
         Maybe you know exactly what you want. Maybe you have a room that needs
         something but don&apos;t know where to begin. Maybe you&apos;ve been
-        looking for the right piece for years and haven&apos;t found it.
-        Start there — tell us what you&apos;re thinking, and we&apos;ll start
-        with a conversation.
+        looking for the right piece for years and haven&apos;t found it. Start
+        there — tell us what you&apos;re thinking, and we&apos;ll start with a
+        conversation.
       </p>
 
-      <form
-        className="mt-12 space-y-6"
-        action="mailto:hello@jmgcustoms.com"
-        method="post"
-        encType="text/plain"
-      >
+      <p className="mt-8 text-sm text-foreground/70">
+        This form opens your email app. Review the draft and send it to complete
+        your inquiry.
+      </p>
+      <InquiryForm>
         <Field id="name" label="Name" required>
-          <input id="name" name="name" type="text" required className={inputClass} />
+          <input
+            id="name"
+            name="name"
+            autoComplete="name"
+            type="text"
+            required
+            className={inputClass}
+          />
         </Field>
 
         <Field id="email" label="Email" required>
-          <input id="email" name="email" type="email" required className={inputClass} />
+          <input
+            id="email"
+            name="email"
+            autoComplete="email"
+            type="email"
+            required
+            className={inputClass}
+          />
         </Field>
 
         <Field id="phone" label="Phone">
-          <input id="phone" name="phone" type="tel" className={inputClass} />
+          <input
+            id="phone"
+            name="phone"
+            autoComplete="tel"
+            type="tel"
+            className={inputClass}
+          />
         </Field>
 
         <Field id="project" label="What are you thinking about having built?">
-          <textarea id="project" name="project" rows={4} className={inputClass} />
+          <textarea
+            id="project"
+            name="project"
+            rows={4}
+            className={inputClass}
+          />
         </Field>
 
         <Field id="wood" label="What type of wood are you considering?">
           <input id="wood" name="wood" type="text" className={inputClass} />
         </Field>
 
-        <Field id="timeline" label="When would you ideally like the project completed?">
-          <input id="timeline" name="timeline" type="text" className={inputClass} />
+        <Field
+          id="timeline"
+          label="When would you ideally like the project completed?"
+        >
+          <input
+            id="timeline"
+            name="timeline"
+            type="text"
+            className={inputClass}
+          />
         </Field>
 
         <Field id="budget" label="What investment range are you considering?">
@@ -135,15 +170,18 @@ export default function StartAProjectPage() {
 
         <button
           type="submit"
-          className="rounded-full bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
+          className="button bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
         >
-          Start the Conversation
+          Open Email Draft
         </button>
-      </form>
+      </InquiryForm>
 
       <p className="mt-8 text-sm text-foreground/60">
         Prefer email? Reach us directly at{" "}
-        <a href="mailto:hello@jmgcustoms.com" className="text-ember-dark hover:underline">
+        <a
+          href="mailto:hello@jmgcustoms.com"
+          className="text-ember-dark hover:underline"
+        >
           hello@jmgcustoms.com
         </a>
         .
@@ -154,11 +192,10 @@ export default function StartAProjectPage() {
           What happens next?
         </h2>
         <p className="mt-4 leading-relaxed text-foreground/70">
-          Once we receive your inquiry, we&apos;ll review the project and
-          reach out to continue the conversation. From there we&apos;ll talk
-          through the scope, design, materials, timeline, and budget. No
-          pressure — just a conversation about what you&apos;re hoping to
-          build.
+          Once we receive your inquiry, we&apos;ll review the project and reach
+          out to continue the conversation. From there we&apos;ll talk through
+          the scope, design, materials, timeline, and budget. No pressure — just
+          a conversation about what you&apos;re hoping to build.
         </p>
       </section>
 

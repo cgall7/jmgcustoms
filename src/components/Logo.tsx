@@ -12,12 +12,12 @@ type LogoProps = {
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <span className={`relative block overflow-hidden rounded-lg ${className}`}>
+    <span className={`relative block overflow-hidden  ${className}`}>
       <Image
         src="/images/logo-mark.jpg"
         alt=""
         fill
-        className="object-contain"
+        className="object-contain p-1"
         sizes="64px"
         priority
       />

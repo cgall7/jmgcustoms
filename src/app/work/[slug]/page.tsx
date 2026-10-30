@@ -32,7 +32,7 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-7xl px-6 py-16">
       <Link
         href="/work"
         className="text-sm font-semibold text-ember-dark hover:underline"
@@ -53,10 +53,8 @@ export default async function ProjectPage({
           <PhotoGrid photos={project.photos} alt={project.title} priority />
         </div>
       ) : (
-        <div className="mt-10 flex aspect-[16/9] items-center justify-center rounded-lg border border-dashed border-wood/25 bg-wood/[0.04]">
-          <span className="font-display text-wood/50">
-            Photos coming soon
-          </span>
+        <div className="mt-10 flex aspect-[16/9] items-center justify-center  border border-dashed border-wood/25 bg-wood/[0.04]">
+          <span className="font-display text-wood/50">Photos coming soon</span>
         </div>
       )}
 
@@ -72,7 +70,7 @@ export default async function ProjectPage({
           ))
         ) : (
           <p className="mt-4 leading-relaxed text-foreground/50 italic">
-            Story details coming soon.
+            {project.summary}
           </p>
         )}
       </div>
@@ -83,12 +81,12 @@ export default async function ProjectPage({
         </p>
         <p className="mt-2 text-foreground/70">Every project is different.</p>
         <p className="mt-4 max-w-md mx-auto text-foreground/70">
-          If you&apos;re thinking about having something made specifically
-          for your home, we&apos;d love to hear what you&apos;re imagining.
+          If you&apos;re thinking about having something made specifically for
+          your home, we&apos;d love to hear what you&apos;re imagining.
         </p>
         <Link
           href="/start-a-project"
-          className="mt-6 inline-block rounded-full bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
+          className="mt-6 inline-block button bg-wood-dark px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-ember-dark"
         >
           Start a Project
         </Link>
