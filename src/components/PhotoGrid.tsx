@@ -67,7 +67,7 @@ export function PhotoGrid({
       >
         <div className="flex items-center justify-between gap-4 p-4">
           <p aria-live="polite">
-            {alt} · {active + 1} / {photos.length}
+            {alt}{photos.length > 1 ? ` · ${active + 1} / ${photos.length}` : ""}
           </p>
           <button
             type="button"
@@ -89,14 +89,14 @@ export function PhotoGrid({
             className="object-contain"
           />
         </div>
-        <div className="flex justify-center gap-4 p-4">
+        {photos.length > 1 && <div className="flex justify-center gap-4 p-4">
           <button type="button" className="button" onClick={() => move(-1)}>
             ← Previous
           </button>
           <button type="button" className="button" onClick={() => move(1)}>
             Next →
           </button>
-        </div>
+        </div>}
       </dialog>
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PhotoGrid } from "@/components/PhotoGrid";
+import { MATERIAL_PHOTOS, BUILD_PHOTOS, JOINERY_PHOTOS } from "@/data/photography";
 
 export const metadata: Metadata = {
   title: "The Craft | JMG Customs",
@@ -54,7 +55,7 @@ export default function TheCraftPage() {
       </div>
 
       <div className="mx-auto max-w-4xl px-6 pb-4">
-        <PhotoGrid photos={["/revisions/p13-02.jpg"]} alt="Prepared hardwood boards stacked in the workshop" layout="curated" priority />
+        <PhotoGrid photos={MATERIAL_PHOTOS.map(photo => photo.src)} alt="Prepared hardwood boards stacked in the workshop" layout="curated" priority />
       </div>
 
       <div className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
@@ -120,7 +121,7 @@ export default function TheCraftPage() {
           <p className="eyebrow">At the bench</p>
           <h2 className="mt-4 font-display text-4xl">Then we build.</h2>
           <PhotoGrid
-            photos={["p06-02.jpg", "p10-01.jpg", "p12-01.jpg"].map((n) => `/revisions/${n}`)}
+            photos={BUILD_PHOTOS.map(photo => photo.src)}
             layout="curated"
             alt="Building in the JMG workshop"
           />
@@ -129,9 +130,7 @@ export default function TheCraftPage() {
       <section className="mx-auto max-w-4xl px-6 py-20">
         <h2 className="font-display text-4xl">Joinery</h2>
         <PhotoGrid
-          photos={["p15-01.jpg", "p16-01.jpg"].map(
-            (n) => `/revisions/${n}`,
-          )}
+          photos={JOINERY_PHOTOS.map(photo => photo.src)}
           layout="curated"
           alt="Hand fitted woodworking joinery"
         />
