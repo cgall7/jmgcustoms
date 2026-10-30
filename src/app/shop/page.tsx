@@ -30,7 +30,7 @@ const products = [
   {
     name: "Cutting Board Set",
     detail: "Contact us for pricing and availability.",
-    photos: ["p61-01.jpg", "p59-01.jpg", "p66-01.jpg"],
+    photos: ["p61-01.jpg", "p59-01.jpg"],
   },
 ];
 export default function ShopPage() {
