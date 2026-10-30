@@ -1,18 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getProject } from "@/data/projects";
+import { FEATURED_PROJECT_SLUGS, getProject } from "@/data/projects";
 
-const featured = ["county-line-table", "log-house-kitchen", "laundry-room"].map(
-  (slug) => getProject(slug)!,
-);
-const craft = [
-  "p05-01.jpg",
-  "p05-02.jpg",
-  "p05-03.jpg",
-  "p06-01.jpg",
-  "p06-02.jpg",
-  "p06-03.jpg",
-];
+import { HOME_CRAFT_PHOTOS } from "@/data/photography";
+
+const featured = FEATURED_PROJECT_SLUGS.map(slug => getProject(slug)!);
 export default function Home() {
   return (
     <>
@@ -47,7 +39,7 @@ export default function Home() {
       </div>
       <section className="bg-[#eee8dd] px-6 py-20 sm:py-28">
         <h2 className="text-center font-display text-4xl sm:text-5xl">
-          Some of my Work
+          Some of My Work
         </h2>
         <div className="mx-auto mt-12 grid max-w-7xl gap-10 md:grid-cols-3">
           {featured.map((p) => (
@@ -57,18 +49,17 @@ export default function Home() {
                 className="relative block aspect-[3/4] bg-[#f5f1e9]"
               >
                 <Image
-                  src={p.photos[0]}
+                  src={p.cover ?? p.photos[0]}
                   alt={p.heroAlt ?? p.title}
                   fill
+                  quality={90}
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className="object-contain"
                 />
               </Link>
               <h3 className="mt-5 font-display text-2xl">{p.title}</h3>
               <p className="mt-2 text-sm text-foreground/70">
-                {p.slug === "county-line-table"
-                  ? "Maple · Custom Map Inlay"
-                  : `${p.type} · ${p.wood}`}
+                {p.wood} · {p.type}
               </p>
               <Link href={`/work/${p.slug}`} className="button mt-5">
                 View the Project
@@ -119,14 +110,14 @@ export default function Home() {
           className="mt-10 flex overflow-x-auto"
           aria-label="Workshop photographs"
         >
-          {craft.map((photo, i) => (
+          {HOME_CRAFT_PHOTOS.map((photo) => (
             <div
-              key={photo}
+              key={photo.src}
               className="relative aspect-square w-1/6 min-w-40 shrink-0"
             >
               <Image
-                src={`/revisions/${photo}`}
-                alt={`Woodworking process: ${["selecting lumber", "clamping joints", "cutting boards", "fitting a joint", "preparing timber", "finished wood grain"][i]}`}
+                src={photo.src}
+                alt={photo.alt}
                 fill
                 sizes="(min-width: 960px) 17vw, 160px"
                 className="object-cover"
